@@ -1,0 +1,2247 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 29 – May and might 1 | English Grammar in Use</title>
+<style>
+/* ============ BASE ============ */
+:root{
+  --navy:#14324f;
+  --blue:#2f6fb5;
+  --blue-dark:#1d4e89;
+  --blue-soft:#e9f2fc;
+  --blue-line:#c7ddf5;
+  --bg:#f4f9ff;
+  --white:#ffffff;
+  --en:#12457f;
+  --vi:#1f6f5c;
+  --amber:#b8860b;
+  --amber-soft:#fff8e6;
+  --ok:#1f7a4d;
+  --ok-soft:#e8f7ef;
+  --bad:#b3261e;
+  --bad-soft:#fdeceb;
+  --radius:14px;
+  --shadow:0 6px 20px rgba(20,50,79,.08);
+  --footer-h:64px;
+}
+*{box-sizing:border-box;}
+html{font-size:17px;}
+body{
+  margin:0;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  background:var(--bg);
+  color:var(--navy);
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  -webkit-text-size-adjust:100%;
+}
+
+/* ============ TOP BAR ============ */
+.topbar{
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:10px 18px;
+  background:linear-gradient(135deg,#ffffff 0%,#eef6ff 100%);
+  border-bottom:1px solid var(--blue-line);
+  flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:12px;min-width:0;}
+.logo{
+  display:grid;place-items:center;
+  width:46px;height:46px;border-radius:12px;
+  background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dark) 100%);
+  color:#fff;font-weight:800;font-size:.95rem;letter-spacing:.5px;
+  box-shadow:0 4px 12px rgba(47,111,181,.35);
+  flex:0 0 auto;
+}
+.brand-title{font-weight:800;font-size:1.05rem;color:var(--navy);line-height:1.15;}
+.brand-sub{font-size:.78rem;color:#5b7c9c;}
+.tools{display:flex;gap:8px;flex-wrap:wrap;}
+.tools button{
+  font-family:inherit;
+  font-size:.82rem;
+  font-weight:600;
+  color:var(--blue-dark);
+  background:#fff;
+  border:1px solid var(--blue-line);
+  border-radius:10px;
+  padding:8px 12px;
+  cursor:pointer;
+  transition:.15s;
+  white-space:nowrap;
+}
+.tools button:hover{background:var(--blue-soft);border-color:var(--blue);}
+.tools button.on{background:var(--blue-dark);color:#fff;border-color:var(--blue-dark);}
+.tools button:disabled{opacity:.5;cursor:not-allowed;}
+
+/* ============ PROGRESS ============ */
+.progress{flex:0 0 auto;height:5px;background:#dbe9f8;}
+#bar{height:100%;width:0;background:linear-gradient(90deg,#5aa0e0,#1d4e89);transition:width .25s ease;}
+
+/* ============ STAGE ============ */
+.stage{
+  flex:1 1 auto;
+  overflow-y:auto;
+  overflow-x:hidden;
+  padding:22px 22px 30px;
+  scroll-behavior:smooth;
+}
+body.notes .stage{padding-bottom:48vh;}
+.slide{display:none;}
+.slide.active{display:block;}
+.slide.active .slide-inner{animation:fade .25s ease;}
+@keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+.slide-inner{
+  max-width:1180px;
+  margin:0 auto;
+  background:#fff;
+  border-radius:20px;
+  box-shadow:var(--shadow);
+  padding:28px 34px 34px;
+  border:1px solid #e3eefb;
+}
+.slide-head{margin-bottom:18px;border-bottom:2px solid var(--blue-soft);padding-bottom:12px;}
+.badge{
+  display:inline-block;
+  background:var(--blue-soft);
+  color:var(--blue-dark);
+  font-size:.74rem;
+  font-weight:800;
+  letter-spacing:.6px;
+  text-transform:uppercase;
+  padding:5px 12px;
+  border-radius:999px;
+  margin-bottom:8px;
+}
+h1{font-size:clamp(2rem,4vw,3.1rem);line-height:1.1;margin:0 0 10px;color:var(--navy);}
+h2{font-size:clamp(1.35rem,2.4vw,2rem);margin:0;color:var(--navy);line-height:1.2;}
+h3{font-size:clamp(1.05rem,1.5vw,1.3rem);margin:0 0 10px;color:var(--blue-dark);}
+.slide-sub{margin:6px 0 0;color:#5b7c9c;font-size:.95rem;font-weight:600;}
+p{margin:0 0 10px;line-height:1.55;font-size:clamp(.95rem,1.15vw,1.1rem);}
+ul,ol{margin:0 0 10px;padding-left:1.3em;}
+li{line-height:1.55;margin-bottom:6px;font-size:clamp(.95rem,1.15vw,1.08rem);}
+
+/* ============ TEXT STYLES ============ */
+.en{
+  color:var(--en);
+  font-weight:700;
+  background:linear-gradient(transparent 62%, #d9e9fb 62%);
+  padding:0 2px;
+}
+.vi{color:var(--vi);font-size:.92em;display:block;margin-top:2px;font-style:normal;}
+.vi-inline{color:var(--vi);font-size:.9em;}
+.hl{color:var(--blue);}
+.hint{font-size:.85rem;color:#6b8aa8;margin-top:16px;}
+
+/* ============ CARDS / GRIDS ============ */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:820px){.grid2,.grid3{grid-template-columns:1fr;}}
+.card{
+  background:var(--blue-soft);
+  border:1px solid var(--blue-line);
+  border-radius:var(--radius);
+  padding:16px 18px;
+}
+.card.white{background:#fff;}
+.card.amber{background:var(--amber-soft);border-color:#f0dca4;}
+.card.green{background:var(--ok-soft);border-color:#bfe6d0;}
+.card.red{background:var(--bad-soft);border-color:#f3c9c6;}
+.card h4{margin:0 0 8px;font-size:1rem;color:var(--blue-dark);}
+.mini-card{
+  background:#fff;
+  border:1px solid var(--blue-line);
+  border-left:5px solid var(--blue);
+  border-radius:12px;
+  padding:12px 16px;
+  box-shadow:0 2px 8px rgba(20,50,79,.05);
+}
+.title-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0 6px;}
+@media(max-width:820px){.title-cards{grid-template-columns:1fr;}}
+
+/* ============ FORMULA ============ */
+.formula{
+  font-family:"Consolas","Courier New",monospace;
+  background:#0f2f4d;
+  color:#eaf4ff;
+  padding:14px 18px;
+  border-radius:12px;
+  font-size:clamp(.95rem,1.25vw,1.15rem);
+  line-height:1.7;
+  margin:10px 0;
+  overflow-x:auto;
+}
+.formula .k{color:#7fd1a8;font-weight:700;}
+.formula .v{color:#ffd98a;}
+.formula .s{color:#9dc6f0;}
+
+/* ============ TABLE ============ */
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:clamp(.9rem,1.1vw,1.03rem);}
+th,td{border:1px solid var(--blue-line);padding:10px 12px;text-align:left;vertical-align:top;}
+th{background:var(--blue-soft);color:var(--blue-dark);font-weight:800;}
+tbody tr:nth-child(even){background:#f8fbff;}
+
+/* ============ EXERCISE LIST ============ */
+.ex-list{list-style:none;padding:0;margin:0;}
+.ex-list.cols2{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;}
+@media(max-width:900px){.ex-list.cols2{grid-template-columns:1fr;}}
+.ex{
+  background:#f8fbff;
+  border:1px solid #dfeafa;
+  border-radius:12px;
+  padding:12px 14px;
+  margin-bottom:10px;
+}
+.ex .q{margin:0 0 6px;font-size:clamp(.93rem,1.1vw,1.04rem);}
+.gap{color:var(--blue);font-weight:800;letter-spacing:1px;}
+.q-num{display:inline-block;min-width:1.6em;font-weight:800;color:var(--blue-dark);}
+
+/* ============ REVEAL ============ */
+.reveal-wrap{margin-top:6px;}
+.reveal-btn{
+  font-family:inherit;
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--blue-dark);
+  background:#fff;
+  border:1px dashed var(--blue);
+  border-radius:8px;
+  padding:5px 12px;
+  cursor:pointer;
+  transition:.15s;
+}
+.reveal-btn:hover{background:var(--blue-soft);}
+.answer{display:none;margin-top:8px;padding:10px 12px;background:var(--ok-soft);border-left:4px solid var(--ok);border-radius:8px;}
+.reveal-wrap.open .answer{display:block;animation:fade .2s ease;}
+.answer .ans-line{margin:0 0 4px;font-weight:700;color:var(--ok);font-size:clamp(.93rem,1.1vw,1.05rem);}
+
+/* ============ STEPPER ============ */
+.stepper{position:relative;}
+.step{display:none;}
+.step.active{display:block;animation:fade .2s ease;}
+.step-controls{display:flex;align-items:center;gap:12px;justify-content:center;margin-top:16px;flex-wrap:wrap;}
+.step-controls button{
+  font-family:inherit;font-size:.85rem;font-weight:700;
+  color:#fff;background:var(--blue-dark);border:none;border-radius:9px;
+  padding:9px 16px;cursor:pointer;
+}
+.step-controls button:disabled{background:#b9cde0;cursor:not-allowed;}
+.step-counter{font-weight:800;color:var(--blue-dark);font-size:.9rem;}
+
+/* ============ FOOTER ============ */
+.footer{
+  flex:0 0 auto;
+  height:var(--footer-h);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:0 20px;
+  background:#fff;
+  border-top:1px solid var(--blue-line);
+  box-shadow:0 -3px 12px rgba(20,50,79,.05);
+}
+.footer button{
+  font-family:inherit;font-size:.92rem;font-weight:700;
+  color:#fff;background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+  border:none;border-radius:11px;padding:11px 22px;cursor:pointer;
+  transition:.15s;
+}
+.footer button:hover{filter:brightness(1.08);}
+.footer button:disabled{background:#c3d5e6;cursor:not-allowed;filter:none;}
+.counter{font-weight:800;color:var(--blue-dark);font-size:1rem;letter-spacing:.5px;}
+
+/* ============ TOC OVERLAY ============ */
+.toc-overlay{
+  position:fixed;inset:0;background:rgba(15,47,77,.55);
+  display:none;z-index:200;padding:24px;overflow-y:auto;
+}
+.toc-overlay.open{display:block;}
+.toc-panel{
+  max-width:820px;margin:20px auto;background:#fff;border-radius:18px;
+  padding:22px 26px;box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+.toc-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;border-bottom:2px solid var(--blue-soft);padding-bottom:10px;}
+.toc-head h3{margin:0;font-size:1.3rem;color:var(--navy);}
+.toc-close{background:var(--blue-dark);color:#fff;border:none;border-radius:9px;padding:8px 14px;font-weight:700;cursor:pointer;font-family:inherit;}
+#tocList{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+@media(max-width:700px){#tocList{grid-template-columns:1fr;}}
+#tocList button{
+  width:100%;display:flex;align-items:center;gap:10px;
+  background:#f6faff;border:1px solid #e0ecfa;border-radius:10px;
+  padding:9px 12px;cursor:pointer;font-family:inherit;text-align:left;
+  font-size:.88rem;color:var(--navy);transition:.15s;
+}
+#tocList button:hover{background:var(--blue-soft);border-color:var(--blue);}
+#tocList button.current{background:var(--blue-dark);color:#fff;border-color:var(--blue-dark);}
+.toc-num{
+  display:grid;place-items:center;min-width:26px;height:26px;border-radius:8px;
+  background:var(--blue-soft);color:var(--blue-dark);font-weight:800;font-size:.78rem;
+}
+#tocList button.current .toc-num{background:rgba(255,255,255,.25);color:#fff;}
+
+/* ============ TEACHER NOTES ============ */
+.tn{display:none;}
+body.notes .slide.active .tn{
+  display:block;
+  position:fixed;
+  left:0;right:0;bottom:var(--footer-h);
+  max-height:44vh;
+  overflow-y:auto;
+  background:#fffdf4;
+  border-top:4px solid #e8c46a;
+  box-shadow:0 -8px 26px rgba(20,50,79,.16);
+  padding:16px 24px 20px;
+  z-index:120;
+  font-size:.9rem;
+  color:#4a3c14;
+}
+body.notes .slide.active .tn h4{
+  margin:0 0 8px;font-size:.95rem;color:#8a6412;text-transform:uppercase;letter-spacing:.6px;
+}
+body.notes .slide.active .tn p{margin:0 0 8px;font-size:.9rem;line-height:1.5;}
+body.notes .slide.active .tn ul{margin:0 0 8px;padding-left:1.2em;}
+body.notes .slide.active .tn li{font-size:.9rem;margin-bottom:4px;}
+body.notes .slide.active .tn strong{color:#7a5710;}
+.tn .tn-tag{
+  display:inline-block;background:#f3e2b4;color:#7a5710;border-radius:6px;
+  padding:2px 8px;font-size:.72rem;font-weight:800;margin-right:6px;letter-spacing:.4px;
+}
+
+/* ============ TITLE SLIDE ============ */
+.slide-title .slide-inner{
+  background:linear-gradient(150deg,#ffffff 0%,#eaf4ff 55%,#dcecfd 100%);
+  border:1px solid #cfe4f8;
+}
+.kicker{font-size:.85rem;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue);margin-bottom:8px;}
+.subtitle{font-size:clamp(1.05rem,1.7vw,1.4rem);color:var(--blue-dark);font-weight:700;margin-top:0;}
+
+/* ============ OBJECTIVES ============ */
+.obj-list{list-style:none;padding:0;margin:0;}
+.obj-list li{
+  display:flex;gap:14px;align-items:flex-start;
+  background:#f8fbff;border:1px solid #e0ecfa;border-radius:12px;
+  padding:12px 16px;margin-bottom:10px;
+}
+.obj-ico{
+  display:grid;place-items:center;flex:0 0 auto;
+  width:30px;height:30px;border-radius:9px;
+  background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+  color:#fff;font-weight:800;font-size:.85rem;
+}
+
+/* ============ TIMELINE ============ */
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0;position:relative;}
+@media(max-width:900px){.timeline{grid-template-columns:1fr 1fr;}}
+.tl-item{
+  background:#fff;border:2px solid var(--blue-line);border-radius:14px;padding:14px;
+  position:relative;
+}
+.tl-item .tl-tag{
+  display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase;
+  background:var(--blue-soft);color:var(--blue-dark);border-radius:999px;padding:3px 10px;margin-bottom:8px;
+}
+.tl-item.past{border-color:#f0dca4;background:var(--amber-soft);}
+.tl-item.past .tl-tag{background:#f6e4b4;color:#8a6412;}
+
+/* ============ COMPARE ============ */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:820px){.compare{grid-template-columns:1fr;}}
+.compare .col{border-radius:14px;padding:16px 18px;border:2px solid;}
+.compare .col.left{background:#f2f9f4;border-color:#bfe6d0;}
+.compare .col.right{background:#fdf2f1;border-color:#f3c9c6;}
+.compare h4{margin:0 0 10px;font-size:1rem;}
+.compare .col.left h4{color:var(--ok);}
+.compare .col.right h4{color:var(--bad);}
+
+/* ============ MISC ============ */
+.pill{display:inline-block;background:var(--blue-soft);color:var(--blue-dark);font-weight:700;font-size:.78rem;border-radius:999px;padding:3px 10px;margin:0 6px 6px 0;}
+.ok-mark{color:var(--ok);font-weight:800;}
+.bad-mark{color:var(--bad);font-weight:800;}
+.note-box{background:var(--amber-soft);border-left:5px solid #e8c46a;border-radius:10px;padding:12px 16px;margin:12px 0;}
+.speak-box{background:#eef7ff;border-left:5px solid var(--blue);border-radius:10px;padding:12px 16px;margin:12px 0;}
+.starter{display:inline-block;background:#fff;border:1px solid var(--blue-line);border-radius:999px;padding:6px 14px;margin:4px 6px 4px 0;font-weight:700;color:var(--blue-dark);font-size:.9rem;}
+.qa{margin:10px 0;}
+.qa .qq{font-weight:700;color:var(--blue-dark);}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:760px){
+  html{font-size:15.5px;}
+  .slide-inner{padding:20px 18px 26px;border-radius:16px;}
+  .stage{padding:14px 12px 24px;}
+  .brand-sub{display:none;}
+  .tools button{padding:7px 10px;font-size:.76rem;}
+  .footer button{padding:10px 14px;font-size:.85rem;}
+  body.notes .slide.active .tn{max-height:50vh;padding:14px 16px 18px;}
+  body.notes .stage{padding-bottom:54vh;}
+}
+
+/* ============ PRINT ============ */
+@media print{
+  body{height:auto;overflow:visible;display:block;background:#fff;}
+  .topbar,.footer,.toc-overlay,.progress{display:none !important;}
+  .stage{overflow:visible;height:auto;padding:0;}
+  .slide{display:block !important;page-break-after:always;break-after:page;}
+  .slide-inner{box-shadow:none;border:none;border-radius:0;max-width:100%;padding:10mm;animation:none;}
+  .tn{display:none !important;}
+  .answer{display:block !important;background:#f2f8f4;border-left:3px solid #1f7a4d;}
+  .step{display:block !important;border-bottom:1px dashed #ccc;padding-bottom:8px;margin-bottom:8px;}
+  .step-controls{display:none !important;}
+  .reveal-btn{display:none !important;}
+  .ex{page-break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">U29</div>
+    <div>
+      <div class="brand-title">Unit 29 – May and might 1</div>
+      <div class="brand-sub">English Grammar in Use · Raymond Murphy · Expressing Possibility</div>
+    </div>
+  </div>
+  <div class="tools">
+    <button id="btnToc" type="button" aria-label="Table of contents">☰ Contents</button>
+    <button id="btnNotes" type="button" aria-label="Toggle teacher notes">👩‍🏫 Notes: off</button>
+    <button id="btnReveal" type="button" aria-label="Reveal all answers on this slide">✔ Answers</button>
+    <button id="btnFull" type="button" aria-label="Toggle full screen">⛶ Full screen</button>
+    <button id="btnReset" type="button" aria-label="Reset presentation">↺ Reset</button>
+  </div>
+</header>
+<div class="progress"><div id="bar"></div></div>
+
+<!-- ================= STAGE ================= -->
+<main class="stage" id="stage">
+
+<!-- ============ SLIDE 1 ============ -->
+<section class="slide slide-title" data-title="Title – May and might 1">
+  <div class="slide-inner">
+    <p class="kicker">English Grammar in Use · Raymond Murphy</p>
+    <h1>UNIT 29<br><span class="hl">May and might 1</span></h1>
+    <p class="subtitle">Expressing Possibility · Diễn tả khả năng</p>
+    <div class="title-cards">
+      <div class="mini-card">
+        <span class="en">He may be in his office.</span>
+        <span class="vi">Có thể anh ấy đang ở văn phòng.</span>
+      </div>
+      <div class="mini-card">
+        <span class="en">She might have left already.</span>
+        <span class="vi">Có thể cô ấy đã đi rồi.</span>
+      </div>
+      <div class="mini-card">
+        <span class="en">It couldn’t have been an accident.</span>
+        <span class="vi">Điều đó không thể nào là một tai nạn.</span>
+      </div>
+    </div>
+    <p class="hint">Dùng phím <strong>← →</strong> để chuyển slide · Nhấn <strong>Notes</strong> để xem ghi chú giáo viên · Nhấn <strong>Contents</strong> để xem mục lục.</p>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 1</h4>
+    <p><span class="tn-tag">Objective</span> Introduce the topic and set a friendly, curious tone for the lesson.</p>
+    <p><span class="tn-tag">Script</span> “Good morning, everyone. Today we are going to learn how to talk about things that are <em>possible</em> but not certain. In English we use <strong>may</strong> and <strong>might</strong>. Look at the three sentences on the screen — can you guess what they have in common?”</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>Are these sentences certain facts? <em>(No, they are guesses.)</em></li>
+      <li>Which words show that we are not sure? <em>(may, might, couldn’t)</em></li>
+    </ul>
+    <p><span class="tn-tag">Transition</span> “Let’s look at what you will be able to do by the end of today’s lesson.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 2 ============ -->
+<section class="slide" data-title="Learning objectives">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part I · Introduction</span>
+      <h2>Learning objectives</h2>
+      <p class="slide-sub">Mục tiêu bài học</p>
+    </header>
+    <ul class="obj-list">
+      <li><span class="obj-ico">1</span><div><strong>Express possibility in the present and future.</strong><span class="vi">Diễn tả khả năng ở hiện tại và tương lai.</span></div></li>
+      <li><span class="obj-ico">2</span><div><strong>Make guesses about past events.</strong><span class="vi">Đưa ra phỏng đoán về sự việc trong quá khứ.</span></div></li>
+      <li><span class="obj-ico">3</span><div><strong>Form positive and negative sentences with <em>may</em> and <em>might</em>.</strong><span class="vi">Đặt câu khẳng định và phủ định với may / might.</span></div></li>
+      <li><span class="obj-ico">4</span><div><strong>Distinguish <em>might not have</em> from <em>couldn’t have</em>.</strong><span class="vi">Phân biệt “có thể đã không” và “không thể nào đã”.</span></div></li>
+      <li><span class="obj-ico">5</span><div><strong>Apply the grammar to everyday situations.</strong><span class="vi">Vận dụng ngữ pháp vào các tình huống hằng ngày.</span></div></li>
+    </ul>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 2</h4>
+    <p><span class="tn-tag">Objective</span> Make the lesson goals explicit so students know what to focus on.</p>
+    <p><span class="tn-tag">Script</span> “Read the five objectives with me. Objectives 1 and 2 are about <em>time</em> — present and past. Objectives 3 and 4 are about <em>form</em> — positive, negative, and the difference between two negative structures. Objective 5 is the most important: using it in real life.”</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>Which objective do you think is the most difficult? Why?</li>
+      <li>Can you already say one sentence with <em>might</em>?</li>
+    </ul>
+    <p><span class="tn-tag">Common mistakes</span> Students often think <em>may</em> is always more certain than <em>might</em>. We will deal with this on slide 6.</p>
+    <p><span class="tn-tag">Transition</span> “Let’s start with a small puzzle. Where is Ben?”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 3 ============ -->
+<section class="slide" data-title="Warm-up: Where is Ben?">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part I · Warm-up</span>
+      <h2>Where is Ben?</h2>
+      <p class="slide-sub">Khởi động – Ben đang ở đâu?</p>
+    </header>
+    <div class="speak-box">
+      <p>You are looking for Ben. Nobody is sure where he is.</p>
+      <p class="vi">Bạn đang tìm Ben. Không ai chắc chắn anh ấy đang ở đâu.</p>
+    </div>
+    <div class="grid3">
+      <div class="card white">
+        <h4>Possibility 1</h4>
+        <p><span class="en">Ben is in his office.</span></p>
+      </div>
+      <div class="card white">
+        <h4>Possibility 2</h4>
+        <p><span class="en">Ben is having lunch.</span></p>
+      </div>
+      <div class="card white">
+        <h4>Possibility 3</h4>
+        <p><span class="en">Ben is driving.</span></p>
+      </div>
+    </div>
+    <div class="note-box">
+      <p><strong>Discuss with your partner / Thảo luận:</strong></p>
+      <ul>
+        <li>Where do you think Ben is?</li>
+        <li>Are you completely sure?</li>
+        <li>How can we express a guess in English?</li>
+      </ul>
+    </div>
+    <p class="hint">Giáo viên: chưa vội đưa ra đáp án – hãy để học sinh đoán trước.</p>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 3</h4>
+    <p><span class="tn-tag">Objective</span> Create a need for the target grammar before presenting it.</p>
+    <p><span class="tn-tag">Script</span> “Imagine you are looking for Ben. Three people give you three different ideas. Which one is true? We don’t know! So how do we say it in English without saying it is 100% true?”</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>“Where do you think Ben is?” — accept any answer.</li>
+      <li>“Are you completely sure?” — students should say no.</li>
+      <li>“So how do we show that we are not sure?” — elicit <em>maybe</em>, <em>perhaps</em>, <em>I think</em>…</li>
+    </ul>
+    <p><span class="tn-tag">Expected answers</span> “Maybe he is in his office.” / “Perhaps he is having lunch.” / “I’m not sure.”</p>
+    <p><span class="tn-tag">Common mistakes</span> Students may say “He can be in his office” — note this for later and correct gently.</p>
+    <p><span class="tn-tag">Transition</span> “English has two very useful words for this: <strong>may</strong> and <strong>might</strong>. Let’s discover them.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 4 ============ -->
+<section class="slide" data-title="Meaning: possibility">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part II · May and might</span>
+      <h2>Discover the meaning</h2>
+      <p class="slide-sub">Khám phá ý nghĩa – diễn tả khả năng</p>
+    </header>
+    <table>
+      <thead>
+        <tr><th style="width:48%">English</th><th>Vietnamese</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="en">He may be in his office.</span><br><span class="vi-inline">(= perhaps he is in his office)</span></td>
+          <td>Có thể anh ấy đang ở văn phòng.</td>
+        </tr>
+        <tr>
+          <td><span class="en">He might be having lunch.</span><br><span class="vi-inline">(= perhaps he is having lunch)</span></td>
+          <td>Có thể anh ấy đang ăn trưa.</td>
+        </tr>
+        <tr>
+          <td><span class="en">Ask Kate. She might know.</span><br><span class="vi-inline">(= perhaps she knows)</span></td>
+          <td>Hãy hỏi Kate. Có thể cô ấy biết.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note-box">
+      <p><strong>Key idea:</strong> We use <strong>may</strong> or <strong>might</strong> to say that something is <em>possible</em> — but we are not sure.</p>
+      <p class="vi">Chúng ta dùng may hoặc might để diễn tả một sự việc <em>có khả năng</em> đúng hoặc xảy ra, nhưng người nói <em>chưa chắc chắn</em>.</p>
+    </div>
+    <p>In the example, the speaker does not know exactly where Ben is, so he or she makes a <strong>guess</strong>.</p>
+    <p class="vi">Trong ví dụ trên, người nói không biết chính xác Ben ở đâu nên đưa ra những phỏng đoán.</p>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 4</h4>
+    <p><span class="tn-tag">Objective</span> Establish the core meaning: possibility, not certainty.</p>
+    <p><span class="tn-tag">Script</span> “Look at the three sentences. Do they tell us a fact? No — they tell us a <em>possibility</em>. The speaker is guessing. In Vietnamese we say ‘có thể’. In English we say <strong>may</strong> or <strong>might</strong>.”</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>Is Ben definitely in his office? <em>(No — maybe.)</em></li>
+      <li>Who is more sure: “Ben is in his office” or “Ben may be in his office”? <em>(The first one.)</em></li>
+      <li>Why do we say “Ask Kate. She might know”? <em>(Because we are not sure whether Kate knows.)</em></li>
+    </ul>
+    <p><span class="tn-tag">Expected answers</span> Students should recognise the idea of uncertainty / “perhaps”.</p>
+    <p><span class="tn-tag">Transition</span> “Now let’s see exactly how to build these sentences.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 5 ============ -->
+<section class="slide" data-title="Form and sentence structure">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part II · Form</span>
+      <h2>Form and sentence structure</h2>
+      <p class="slide-sub">Cấu trúc câu với may / might</p>
+    </header>
+    <div class="formula">
+      <span class="s">Subject</span> + <span class="k">may / might</span> + <span class="v">V (nguyên mẫu, không có “to”)</span>
+    </div>
+    <table>
+      <thead>
+        <tr><th style="width:26%">Structure</th><th style="width:37%">Example</th><th>Vietnamese</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>may/might + <strong>base verb</strong></td>
+          <td><span class="en">She might know.</span></td>
+          <td>Có thể cô ấy biết.</td>
+        </tr>
+        <tr>
+          <td>may/might + <strong>be</strong> + adj / noun / place</td>
+          <td><span class="en">He may be in his office.</span><br><span class="en">It may be true.</span></td>
+          <td>Có thể anh ấy đang ở văn phòng.<br>Có thể điều đó đúng.</td>
+        </tr>
+        <tr>
+          <td>may/might + <strong>be + V-ing</strong></td>
+          <td><span class="en">He might be having lunch.</span></td>
+          <td>Có thể anh ấy đang ăn trưa.</td>
+        </tr>
+        <tr>
+          <td>may/might <strong>not</strong> + base verb</td>
+          <td><span class="en">She might not know.</span></td>
+          <td>Có thể cô ấy không biết.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="grid2">
+      <div class="card green">
+        <h4>✔ Correct</h4>
+        <p><span class="en">She might know.</span></p>
+        <p><span class="en">He may be tired.</span></p>
+      </div>
+      <div class="card red">
+        <h4>✘ Incorrect</h4>
+        <p><span class="bad-mark">She might knows.</span></p>
+        <p><span class="bad-mark">She might to know.</span></p>
+      </div>
+    </div>
+    <div class="note-box">
+      <p>Sau <strong>may / might</strong>, động từ luôn ở dạng <strong>nguyên mẫu không có “to”</strong>. Không thêm <em>-s</em>, không thêm <em>to</em>.</p>
+    </div>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 5</h4>
+    <p><span class="tn-tag">Objective</span> Students can build correct affirmative and negative sentences with may/might.</p>
+    <p><span class="tn-tag">Script</span> “The rule is simple: after <em>may</em> or <em>might</em>, use the verb without ‘to’ and without ‘-s’. Say it with me: <em>She might know</em>. Not ‘she might knows’, not ‘she might to know’.”</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>Make a sentence about your teacher: “She may be …”</li>
+      <li>Make a sentence about your friend: “He might be …ing …”</li>
+      <li>Make it negative: “She might not …”</li>
+    </ul>
+    <p><span class="tn-tag">Common mistakes</span> Adding <em>-s</em> (might knows), adding <em>to</em> (might to know), using <em>can</em> instead of <em>may</em>.</p>
+    <p><span class="tn-tag">Transition</span> “So we have two words — <em>may</em> and <em>might</em>. Are they different?”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 6 ============ -->
+<section class="slide" data-title="May vs. might">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part II · Comparison</span>
+      <h2>May vs. might</h2>
+      <p class="slide-sub">Hai từ có thể thay thế cho nhau</p>
+    </header>
+    <p>Both <strong>may</strong> and <strong>might</strong> express possibility. In most situations you can use either one:</p>
+    <div class="grid2">
+      <div class="card white">
+        <h4>With <em>may</em></h4>
+        <p><span class="en">It may be true.</span></p>
+        <p><span class="en">She may know.</span></p>
+      </div>
+      <div class="card white">
+        <h4>With <em>might</em></h4>
+        <p><span class="en">It might be true.</span></p>
+        <p><span class="en">She might know.</span></p>
+      </div>
+    </div>
+    <div class="note-box">
+      <p><strong>Meaning:</strong> “Perhaps it is true.” / “Perhaps she knows.”</p>
+      <p class="vi">Hai câu có nghĩa gần như giống nhau: “Có thể điều đó đúng.” / “Có thể cô ấy biết.”</p>
+    </div>
+    <div class="card amber">
+      <h4>⚠ Important</h4>
+      <p><em>Might</em> sometimes sounds a little more tentative (dè dặt, ít chắc chắn hơn một chút) in some contexts — but do <strong>not</strong> say that <em>might</em> always means a lower probability than <em>may</em>. There is no fixed rule.</p>
+      <p class="vi">Không có quy tắc tuyệt đối rằng “might” luôn chỉ khả năng thấp hơn “may”. Trong hầu hết trường hợp, hai từ này thay thế cho nhau được.</p>
+    </div>
+    <div class="speak-box">
+      <p><strong>Oral practice / Luyện nói nhanh:</strong></p>
+      <p>Say each sentence twice — once with <em>may</em>, once with <em>might</em>.</p>
+      <p><span class="en">1. It ___ be true. &nbsp; 2. She ___ know the answer. &nbsp; 3. They ___ be at home.</span></p>
+    </div>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 6</h4>
+    <p><span class="tn-tag">Objective</span> Students understand that may and might are largely interchangeable.</p>
+    <p><span class="tn-tag">Script</span> “Here is good news: you do not have to choose. <em>May</em> and <em>might</em> are brothers. <em>Might</em> can sound a little softer or more careful, but both are correct.”</p>
+    <p><span class="tn-tag">Activity</span> Point at individual students and ask them to transform: teacher says “It may be true” → student says “It might be true.” Do five or six quick rounds. Keep the pace fast.</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>“Is ‘It might be true’ stronger or weaker than ‘It may be true’?” <em>(Practically the same; might can feel slightly more tentative.)</em></li>
+    </ul>
+    <p><span class="tn-tag">Common mistakes</span> Students may believe <em>might</em> = 10% and <em>may</em> = 50%. Correct this gently.</p>
+    <p><span class="tn-tag">Transition</span> “Now let’s look at the negative — because the negative is very useful.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 7 ============ -->
+<section class="slide" data-title="Positive and negative forms">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part II · Form</span>
+      <h2>Positive and negative forms</h2>
+      <p class="slide-sub">Dạng khẳng định và phủ định</p>
+    </header>
+    <div class="formula">
+      <span class="s">Subject</span> + <span class="k">may / might</span> + <span class="v">V</span><br>
+      <span class="s">Subject</span> + <span class="k">may / might not</span> + <span class="v">V</span>
+    </div>
+    <div class="compare">
+      <div class="col left">
+        <h4>✔ Positive – khẳng định</h4>
+        <p><span class="en">It may be true.</span><span class="vi">Có thể điều đó đúng.</span></p>
+        <p><span class="en">She might know.</span><span class="vi">Có thể cô ấy biết.</span></p>
+      </div>
+      <div class="col right">
+        <h4>✘ Negative – phủ định</h4>
+        <p><span class="en">It may not be true.</span><span class="vi">Có thể điều đó <em>không</em> đúng.</span></p>
+        <p><span class="en">She might not know.</span><span class="vi">Có thể cô ấy <em>không</em> biết.</span></p>
+      </div>
+    </div>
+    <div class="note-box">
+      <p><strong>Meaning difference:</strong></p>
+      <p><span class="en">It may be true.</span> = perhaps it is true → <span class="vi-inline">có thể đúng</span></p>
+      <p><span class="en">It may not be true.</span> = perhaps it isn’t true → <span class="vi-inline">có thể không đúng</span></p>
+      <p class="vi">Chúng ta thêm <strong>not</strong> sau may/might để diễn tả khả năng một sự việc <em>không</em> xảy ra hoặc <em>không</em> đúng.</p>
+    </div>
+    <div class="speak-box">
+      <p><strong>Quick check / Kiểm tra nhanh:</strong> Is the speaker sure?</p>
+      <p>1. “She might not know.” &nbsp; 2. “It may not be true.” &nbsp; 3. “She doesn’t know.”</p>
+      <p class="vi">Câu 1 và 2: người nói <em>không chắc</em>. Câu 3: người nói <em>khẳng định</em> một sự thật.</p>
+    </div>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 7</h4>
+    <p><span class="tn-tag">Objective</span> Students can form and understand negative possibility sentences.</p>
+    <p><span class="tn-tag">Script</span> “Be careful! ‘She might not know’ does NOT mean ‘She doesn’t know’. It means ‘Perhaps she doesn’t know — I’m not sure.’ The negative is still only a possibility.”</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>“Your friend didn’t answer the phone. Give me a negative possibility.” <em>(She might not have her phone.)</em></li>
+      <li>“Is ‘It may not be true’ the same as ‘It is not true’?” <em>(No.)</em></li>
+    </ul>
+    <p><span class="tn-tag">Common mistakes</span> Students confuse <em>may not</em> with a definite negative. Emphasise: <em>may not</em> = “perhaps not”.</p>
+    <p><span class="tn-tag">Transition</span> “There is one small spelling trap: <em>may be</em> and <em>maybe</em>. Let’s fix it now.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 8 ============ -->
+<section class="slide" data-title="May be vs. maybe">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part II · Spelling &amp; usage</span>
+      <h2>May be vs. maybe</h2>
+      <p class="slide-sub">Hai từ – một từ</p>
+    </header>
+    <div class="compare">
+      <div class="col left">
+        <h4>may be (2 words)</h4>
+        <p><strong>may</strong> = modal verb &nbsp;|&nbsp; <strong>be</strong> = base verb</p>
+        <p><span class="en">It may be true.</span><span class="vi">Điều đó có thể đúng.</span></p>
+        <p><span class="en">She may be tired.</span><span class="vi">Có thể cô ấy đang mệt.</span></p>
+        <p class="vi-inline">→ Đây là cấu trúc động từ: may + be.</p>
+      </div>
+      <div class="col right" style="background:#eef7ff;border-color:#c7ddf5;">
+        <h4 style="color:var(--blue-dark)">maybe (1 word)</h4>
+        <p><strong>maybe</strong> = adverb (= perhaps)</p>
+        <p><span class="en">“Is it true?” “Maybe. I’m not sure.”</span><span class="vi">“Điều đó có đúng không?” “Có thể. Tôi không chắc.”</span></p>
+        <p><span class="en">Maybe she is tired.</span><span class="vi">Có lẽ cô ấy đang mệt.</span></p>
+        <p class="vi-inline">→ Đây là trạng từ, thường đứng đầu câu.</p>
+      </div>
+    </div>
+    <div class="note-box">
+      <p><strong>Compare:</strong></p>
+      <p><span class="en">She may be tired.</span> — may + be + adjective</p>
+      <p><span class="en">Maybe she is tired.</span> — adverb + full sentence</p>
+      <p class="vi">Hai câu có nghĩa gần giống nhau nhưng cấu trúc ngữ pháp khác nhau.</p>
+    </div>
+    <div class="speak-box">
+      <p><strong>Classroom activity:</strong> Which is correct — <em>may be</em> or <em>maybe</em>?</p>
+      <p>1. “___ he is at home.” &nbsp; 2. “He ___ at home.” &nbsp; 3. “___ I will see you tomorrow.” &nbsp; 4. “It ___ raining outside.”</p>
+      <div class="reveal-wrap">
+        <button class="reveal-btn" type="button">Show answers</button>
+        <div class="answer">
+          <p class="ans-line">1. Maybe &nbsp;|&nbsp; 2. may be &nbsp;|&nbsp; 3. Maybe &nbsp;|&nbsp; 4. may be</p>
+          <p class="vi">1 và 3: đứng đầu câu, là trạng từ → <strong>Maybe</strong>. 2 và 4: sau chủ ngữ, là động từ khuyết thiếu + be → <strong>may be</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 8</h4>
+    <p><span class="tn-tag">Objective</span> Students never confuse the two-word verb form with the one-word adverb.</p>
+    <p><span class="tn-tag">Script</span> “This is a very common writing mistake, even for good students. <em>May be</em> — two words — is a verb. <em>Maybe</em> — one word — is an adverb, like ‘perhaps’. Test: if you can replace it with ‘perhaps’, write one word.”</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>“Can I write ‘Maybe he may be late’?” <em>(Grammatically possible but redundant; better: “He may be late.”)</em></li>
+      <li>Where does <em>maybe</em> usually go in a sentence? <em>(At the beginning.)</em></li>
+    </ul>
+    <p><span class="tn-tag">Common mistakes</span> “Maybe be he is busy.” — wrong; it is either “Maybe he is busy.” or “He may be busy.”</p>
+    <p><span class="tn-tag">Transition</span> “So far, everything is about now and the future. What about yesterday? Let’s look at the timeline.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 9 ============ -->
+<section class="slide" data-title="Present or past? The timeline">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part III · Past possibility</span>
+      <h2>Present or past? The timeline</h2>
+      <p class="slide-sub">Hiện tại hay quá khứ?</p>
+    </header>
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="tl-tag">Now</span>
+        <p><span class="en">He might be at home.</span></p>
+        <p class="vi">Có thể bây giờ anh ấy đang ở nhà.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-tag">Now · in progress</span>
+        <p><span class="en">He might be sleeping.</span></p>
+        <p class="vi">Có thể anh ấy đang ngủ.</p>
+      </div>
+      <div class="tl-item past">
+        <span class="tl-tag">Past</span>
+        <p><span class="en">He might have left.</span></p>
+        <p class="vi">Có thể anh ấy đã đi rồi.</p>
+      </div>
+      <div class="tl-item past">
+        <span class="tl-tag">Past · in progress</span>
+        <p><span class="en">He might have been sleeping when I called.</span></p>
+        <p class="vi">Có thể anh ấy đang ngủ vào lúc tôi gọi.</p>
+      </div>
+    </div>
+    <div class="note-box">
+      <p><strong>Rule of thumb:</strong> If the guess is about the <em>past</em>, we add <strong>have + V3</strong> after may/might.</p>
+      <p class="vi">Nếu phỏng đoán về <em>quá khứ</em>, ta thêm <strong>have + V3</strong> (quá khứ phân từ) sau may/might.</p>
+    </div>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 9</h4>
+    <p><span class="tn-tag">Objective</span> Students see the grammatical change visually across time.</p>
+    <p><span class="tn-tag">Script</span> “Look at the timeline. The first two boxes are about now. The last two are about the past. Do you see the difference? In the past we add two words: <em>have</em> + the third form of the verb.”</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>“He might be sleeping” — is this about now or yesterday? <em>(Now.)</em></li>
+      <li>“He might have been sleeping” — now or yesterday? <em>(The past.)</em></li>
+      <li>What is the difference between “might have left” and “might have been sleeping”?</li>
+    </ul>
+    <p><span class="tn-tag">Expected answers</span> “might have left” = a finished past action; “might have been sleeping” = an action in progress at a past moment.</p>
+    <p><span class="tn-tag">Transition</span> “Let’s look at the past structures in detail.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 10 ============ -->
+<section class="slide" data-title="May have / might have + V3">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part III · Form</span>
+      <h2>May have … / Might have …</h2>
+      <p class="slide-sub">Possibility in the past – khả năng trong quá khứ</p>
+    </header>
+    <div class="formula">
+      <span class="s">Subject</span> + <span class="k">may / might</span> + <span class="k">have</span> + <span class="v">V3 (past participle)</span><br>
+      <span class="s">Subject</span> + <span class="k">may / might not</span> + <span class="k">have</span> + <span class="v">V3</span>
+    </div>
+    <table>
+      <thead>
+        <tr><th style="width:42%">English</th><th>Vietnamese</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="en">She may have been asleep.</span><br><span class="vi-inline">(= perhaps she was asleep)</span></td>
+          <td>Có thể cô ấy đã ngủ.</td>
+        </tr>
+        <tr>
+          <td><span class="en">You might have left it at work.</span><br><span class="vi-inline">(= perhaps you left it at work)</span></td>
+          <td>Có thể bạn đã để quên nó ở chỗ làm.</td>
+        </tr>
+        <tr>
+          <td><span class="en">She might not have known about it.</span><br><span class="vi-inline">(= perhaps she didn’t know)</span></td>
+          <td>Có thể cô ấy đã không biết về cuộc họp.</td>
+        </tr>
+        <tr>
+          <td><span class="en">He may not have been feeling well.</span><br><span class="vi-inline">(= perhaps he wasn’t feeling well)</span></td>
+          <td>Có thể hôm qua anh ấy đã cảm thấy không khỏe.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note-box">
+      <p><strong>Note:</strong> In this structure, <em>have</em> is not “possession” — it is part of the perfect structure. It never changes to <em>has</em>.</p>
+      <p class="vi">Trong cấu trúc này, <em>have</em> không mang nghĩa sở hữu mà là một phần của cấu trúc hoàn thành. Nó không bao giờ đổi thành <em>has</em>.</p>
+    </div>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 10</h4>
+    <p><span class="tn-tag">Objective</span> Students can form past possibility sentences correctly.</p>
+    <p><span class="tn-tag">Script</span> “Read the four sentences. Notice: <em>may have been</em>, <em>might have left</em>, <em>might not have known</em>, <em>may not have been feeling</em>. In every one, we have <em>have</em> + the third form.”</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>“Kate didn’t answer her phone. What do you think?” → “She may have been asleep.”</li>
+      <li>“I can’t find my phone.” → “You might have left it at work.”</li>
+      <li>“Why wasn’t Amy at the meeting?” → “She might not have known about it.”</li>
+    </ul>
+    <p><span class="tn-tag">Common mistakes</span> “She may has been asleep.” / “She might have be asleep.” / “He may have went.” Watch for these and correct on the spot.</p>
+    <p><span class="tn-tag">Transition</span> “Let’s look more closely at the different past forms.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 11 ============ -->
+<section class="slide" data-title="Past structures and irregular verbs">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part III · Form</span>
+      <h2>Different past structures</h2>
+      <p class="slide-sub">Các dạng cấu trúc quá khứ</p>
+    </header>
+    <table>
+      <thead>
+        <tr><th style="width:34%">Structure</th><th style="width:33%">Example</th><th>Vietnamese</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>might have + <strong>V3</strong></td>
+          <td><span class="en">He might have left.</span></td>
+          <td>Có thể anh ấy đã đi rồi.</td>
+        </tr>
+        <tr>
+          <td>might have + <strong>been</strong> + adj</td>
+          <td><span class="en">She might have been asleep.</span></td>
+          <td>Có thể cô ấy đã ngủ.</td>
+        </tr>
+        <tr>
+          <td>might have + <strong>been + V-ing</strong></td>
+          <td><span class="en">He might have been working.</span></td>
+          <td>Có thể lúc đó anh ấy đang làm việc.</td>
+        </tr>
+        <tr>
+          <td>might <strong>not</strong> have + V3</td>
+          <td><span class="en">He might not have heard.</span></td>
+          <td>Có thể anh ấy đã không nghe thấy.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Irregular verbs you need / Động từ bất quy tắc cần nhớ</h3>
+    <div class="grid3">
+      <div class="card white"><p><strong>go – went – gone</strong></p><p><strong>leave – left – left</strong></p></div>
+      <div class="card white"><p><strong>know – knew – known</strong></p><p><strong>tell – told – told</strong></p></div>
+      <div class="card white"><p><strong>forget – forgot – forgotten</strong></p><p><strong>hear – heard – heard</strong></p></div>
+    </div>
+    <div class="note-box">
+      <p>Với động từ có quy tắc, thêm <strong>-ed</strong> để tạo quá khứ phân từ (want → wanted). Với động từ bất quy tắc, cần học dạng V3.</p>
+    </div>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 11</h4>
+    <p><span class="tn-tag">Objective</span> Students recognise the three past patterns and recall key irregular V3 forms.</p>
+    <p><span class="tn-tag">Script</span> “Three patterns only. Number one: <em>might have left</em> — a simple past action. Number two: <em>might have been asleep</em> — a past state. Number three: <em>might have been working</em> — a past action in progress.”</p>
+    <p><span class="tn-tag">Activity</span> Quick drill: teacher says the base verb, students say the V3. <em>go → gone, leave → left, know → known, tell → told, forget → forgotten, hear → heard.</em></p>
+    <p><span class="tn-tag">Common mistakes</span> “might have went” (should be <em>gone</em>), “might have heared” (should be <em>heard</em>).</p>
+    <p><span class="tn-tag">Transition</span> “Let’s practise. Present or past?”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 12 ============ -->
+<section class="slide" data-title="Guided practice: present or past?">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part III · Guided practice</span>
+      <h2>Guided practice: Present or past?</h2>
+      <p class="slide-sub">Xác định thời gian và cấu trúc</p>
+    </header>
+    <p>Look at each sentence. Decide: is the guess about <strong>now</strong> or about the <strong>past</strong>? Which structure is used?</p>
+    <p class="vi">Hãy xác định mỗi câu phỏng đoán về hiện tại hay quá khứ, và cấu trúc được dùng là gì.</p>
+    <ul class="ex-list cols2">
+      <li class="ex">
+        <p class="q"><span class="q-num">1.</span> <span class="en">He might be sleeping.</span></p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer">
+            <p class="ans-line">Present · in progress → might + be + V-ing</p>
+            <p class="vi">Phỏng đoán một hành động đang diễn ra ở hiện tại: “Có thể anh ấy đang ngủ.”</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">2.</span> <span class="en">She may have left already.</span></p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer">
+            <p class="ans-line">Past → may + have + V3 (left)</p>
+            <p class="vi">Phỏng đoán về quá khứ: “Có thể cô ấy đã đi rồi.”</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">3.</span> <span class="en">They might not know the answer.</span></p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer">
+            <p class="ans-line">Present · negative → might not + base verb</p>
+            <p class="vi">Phỏng đoán ở hiện tại, dạng phủ định: “Có thể họ không biết câu trả lời.”</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">4.</span> <span class="en">You might have been driving too fast.</span></p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer">
+            <p class="ans-line">Past · in progress → might + have + been + V-ing</p>
+            <p class="vi">Phỏng đoán một hành động đang diễn ra trong quá khứ: “Có thể lúc đó bạn đã lái xe quá nhanh.”</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">5.</span> <span class="en">I may not have heard you.</span></p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer">
+            <p class="ans-line">Past · negative → may not + have + V3 (heard)</p>
+            <p class="vi">“Có thể tôi đã không nghe thấy bạn.”</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">6.</span> <span class="en">It could be true.</span></p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer">
+            <p class="ans-line">Present → could + base verb</p>
+            <p class="vi">“Điều đó có thể đúng.” — <em>could</em> cũng diễn tả khả năng, giống may/might.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <p class="hint">Giáo viên: cho học sinh trả lời miệng trước, sau đó mới bấm “Show answer”.</p>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 12</h4>
+    <p><span class="tn-tag">Objective</span> Check that students can identify time reference and structure.</p>
+    <p><span class="tn-tag">Script</span> “I will read each sentence. You tell me: now or past? And what structure do you see?”</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>Which sentences have <em>have</em>? What does that tell you? <em>(They are about the past.)</em></li>
+      <li>Which sentence has <em>been + V-ing</em>? What does it mean? <em>(An action in progress in the past.)</em></li>
+    </ul>
+    <p><span class="tn-tag">Expected answers</span> 1 present continuous possibility, 2 past, 3 present negative, 4 past continuous possibility, 5 past negative, 6 present with <em>could</em>.</p>
+    <p><span class="tn-tag">Transition</span> “You noticed <em>could</em> in number 6. Let’s talk about <em>could</em> now.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 13 ============ -->
+<section class="slide" data-title="Could for possibility">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part IV · Could</span>
+      <h2>Could – similar to may and might</h2>
+      <p class="slide-sub">Could cũng diễn tả khả năng</p>
+    </header>
+    <div class="grid2">
+      <div class="card white">
+        <h4>Present / future possibility</h4>
+        <p><span class="en">It’s a strange story, but it could be true.</span></p>
+        <p class="vi">Đó là một câu chuyện kỳ lạ, nhưng nó có thể đúng.</p>
+        <p class="vi-inline">(= it is possible that it’s true)</p>
+      </div>
+      <div class="card white">
+        <h4>Past possibility</h4>
+        <p><span class="en">You could have left your phone at work.</span></p>
+        <p class="vi">Có thể bạn đã để quên điện thoại ở chỗ làm.</p>
+        <p class="vi-inline">(= it’s possible that you left it there)</p>
+      </div>
+    </div>
+    <div class="formula">
+      <span class="s">Subject</span> + <span class="k">could</span> + <span class="v">V</span> &nbsp;&nbsp;→&nbsp;&nbsp; possibility now / in the future<br>
+      <span class="s">Subject</span> + <span class="k">could have</span> + <span class="v">V3</span> &nbsp;&nbsp;→&nbsp;&nbsp; possibility in the past
+    </div>
+    <div class="note-box">
+      <p>Trong các ví dụ này, <strong>could</strong> diễn tả khả năng, tương tự <em>may</em> và <em>might</em>.</p>
+      <p><strong>could have + V3</strong> dùng để phỏng đoán một sự việc có thể đã xảy ra trong quá khứ.</p>
+    </div>
+    <div class="card amber">
+      <h4>⚠ But be careful with the negative!</h4>
+      <p><strong>couldn’t</strong> is NOT the same as <strong>may not / might not</strong>. We will study this on the next slide.</p>
+    </div>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 13</h4>
+    <p><span class="tn-tag">Objective</span> Students see that <em>could</em> is a third way to express possibility.</p>
+    <p><span class="tn-tag">Script</span> “Good news again: you already know <em>could</em> for ability — ‘I could swim when I was five.’ But <em>could</em> has a second job: possibility. ‘It could be true’ = ‘It may be true’ = ‘It might be true’.”</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>“It could rain later.” — is the speaker sure? <em>(No.)</em></li>
+      <li>“You could have left your keys in the car.” — now or past? <em>(Past.)</em></li>
+    </ul>
+    <p><span class="tn-tag">Common mistakes</span> Students may think <em>could</em> is only about ability. Give one clear example of each meaning.</p>
+    <p><span class="tn-tag">Transition</span> “Now the most important slide of this lesson: <em>might not have</em> vs. <em>couldn’t have</em>.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 14 ============ -->
+<section class="slide" data-title="Might not have vs. couldn’t have">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part IV · Key contrast</span>
+      <h2>Might not have vs. couldn’t have</h2>
+      <p class="slide-sub">Điểm ngữ pháp quan trọng nhất của bài</p>
+    </header>
+    <div class="compare">
+      <div class="col left">
+        <h4>might not have + V3</h4>
+        <p><span class="en">Why hasn’t Sarah replied to my message? I suppose she might not have received it.</span></p>
+        <p class="vi">Tại sao Sarah chưa trả lời tin nhắn của tôi? Tôi cho rằng có thể cô ấy đã không nhận được tin nhắn.</p>
+        <p><strong>(= it’s possible that she didn’t receive it — perhaps she did, perhaps she didn’t)</strong></p>
+        <p class="vi-inline">Người nói <em>chưa biết chắc</em>: có thể cô ấy nhận được, cũng có thể không.</p>
+      </div>
+      <div class="col right">
+        <h4>couldn’t have + V3</h4>
+        <p><span class="en">Sarah couldn’t have received my message. Otherwise she would have replied.</span></p>
+        <p class="vi">Sarah không thể nào đã nhận được tin nhắn của tôi. Nếu không, cô ấy đã trả lời rồi.</p>
+        <p><strong>(= it is not possible that she got my message)</strong></p>
+        <p class="vi-inline">Người nói cho rằng điều đó <em>không thể xảy ra</em>, dựa trên suy luận.</p>
+      </div>
+    </div>
+    <div class="note-box">
+      <p><strong>Remember:</strong></p>
+      <p><strong>might not have + V3</strong> = có thể đã không xảy ra <span class="vi-inline">(người nói chưa chắc chắn)</span></p>
+      <p><strong>couldn’t have + V3</strong> = không thể nào đã xảy ra <span class="vi-inline">(người nói kết luận chắc chắn là không thể)</span></p>
+      <p class="vi">Vì vậy, không nên nhầm lẫn <em>couldn’t have + V3</em> với <em>might not have + V3</em>.</p>
+    </div>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 14</h4>
+    <p><span class="tn-tag">Objective</span> Students distinguish an uncertain negative from a confident negative deduction.</p>
+    <p><span class="tn-tag">Script</span> “Look at the two sentences about Sarah. Same situation, but two different meanings. In the green column, the speaker is <em>guessing</em>: ‘Perhaps she didn’t get it.’ In the red column, the speaker is <em>sure</em>: ‘It is impossible that she got it — because she would have replied.’”</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>In which sentence is the speaker more certain? <em>(couldn’t have)</em></li>
+      <li>Can we say “She couldn’t have received it, but perhaps she did”? <em>(No — it is contradictory.)</em></li>
+      <li>Give me a reason why someone might not have received a message. <em>(Phone was off, no internet, wrong number…)</em></li>
+    </ul>
+    <p><span class="tn-tag">Common mistakes</span> Using <em>couldn’t have</em> when the speaker is only guessing, and using <em>might not have</em> when the speaker has strong evidence.</p>
+    <p><span class="tn-tag">Transition</span> “Let’s test your understanding.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 15 ============ -->
+<section class="slide" data-title="Check understanding">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part IV · Check</span>
+      <h2>Check understanding</h2>
+      <p class="slide-sub">Chọn dạng đúng và giải thích lý do</p>
+    </header>
+    <p>Choose: <span class="pill">may have</span><span class="pill">might not have</span><span class="pill">couldn’t have</span></p>
+    <p class="vi">Hãy giải thích lựa chọn của em bằng lời trước khi giáo viên hiện đáp án.</p>
+    <ul class="ex-list">
+      <li class="ex">
+        <p class="q"><span class="q-num">1.</span> Amy wasn’t at the meeting. Perhaps she didn’t know about it. → She ________ about it.</p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer">
+            <p class="ans-line">might not have known</p>
+            <p class="vi">Người nói chỉ <em>phỏng đoán</em>, không khẳng định chắc chắn Amy không biết → dùng <strong>might not have + V3</strong>.</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">2.</span> The police say the fire was deliberate. It ________ an accident.</p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer">
+            <p class="ans-line">couldn’t have been</p>
+            <p class="vi">Cảnh sát kết luận vụ cháy là cố ý → “không thể nào là tai nạn”. Đây là suy luận chắc chắn, dùng <strong>couldn’t have + V3</strong>.</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">3.</span> I can’t find my keys. Perhaps I left them in the car. → I ________ them in the car.</p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer">
+            <p class="ans-line">may have left</p>
+            <p class="vi">Phỏng đoán về quá khứ, khả năng xảy ra → <strong>may have + V3</strong> (leave – left – left).</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">4.</span> Tom didn’t come to the party. Perhaps he didn’t want to come. → He ________ to come.</p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer">
+            <p class="ans-line">might not have wanted</p>
+            <p class="vi">Đây chỉ là một khả năng → <strong>might not have + V3</strong> (want – wanted – wanted).</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">5.</span> Mike says he tried to find you yesterday. But you were in your office all day. → He ________ very hard.</p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer">
+            <p class="ans-line">couldn’t have tried</p>
+            <p class="vi">Người nói suy luận chắc chắn: nếu Mike cố gắng thì đã tìm thấy → “không thể nào đã cố gắng nhiều” → <strong>couldn’t have + V3</strong>.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 15</h4>
+    <p><span class="tn-tag">Objective</span> Check the key contrast before moving to the textbook exercises.</p>
+    <p><span class="tn-tag">Script</span> “Read the situation, then choose. But don’t just choose — tell me <em>why</em>. Is the speaker guessing, or is the speaker sure?”</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>Which word tells you the speaker is only guessing? <em>(perhaps, I suppose, maybe)</em></li>
+      <li>Which sentence gives a reason or evidence? <em>(2 and 5)</em></li>
+    </ul>
+    <p><span class="tn-tag">Expected answers</span> 1 might not have known · 2 couldn’t have been · 3 may have left · 4 might not have wanted · 5 couldn’t have tried</p>
+    <p><span class="tn-tag">Transition</span> “Now let’s open the textbook exercises — Exercise 29.1.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 16 ============ -->
+<section class="slide" data-title="Exercise 29.1 – Task">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part V · Textbook</span>
+      <h2>Exercise 29.1 – Complete the sentences</h2>
+      <p class="slide-sub">Chọn cụm từ thích hợp trong khung</p>
+    </header>
+    <div class="card">
+      <h4>Choose from the box / Chọn từ khung:</h4>
+      <p>
+        <span class="pill">may be Tom’s</span>
+        <span class="pill">may not be feeling well</span>
+        <span class="pill">may not be possible</span>
+        <span class="pill">might be in her room</span>
+        <span class="pill">might be Brazilian</span>
+        <span class="pill">might be driving</span>
+        <span class="pill">might have one</span>
+        <span class="pill">might know</span>
+      </p>
+    </div>
+    <p class="vi">Những cụm từ này đều diễn tả khả năng, nên cần chọn theo ngữ cảnh của từng câu. Hãy làm việc cá nhân hoặc theo cặp trong 3 phút.</p>
+    <ul class="ex-list cols2">
+      <li class="ex"><p class="q"><span class="q-num">1.</span> A: Do you know where Helen is? B: I’m not sure. She ______________.</p></li>
+      <li class="ex"><p class="q"><span class="q-num">2.</span> A: Is there a bookshop near here? B: I’m not sure, but ask Anna. She ______________.</p></li>
+      <li class="ex"><p class="q"><span class="q-num">3.</span> A: Where are those people from? B: I don’t know. They ______________.</p></li>
+      <li class="ex"><p class="q"><span class="q-num">4.</span> A: I hope you can help me. B: I’ll try, but it ______________.</p></li>
+      <li class="ex"><p class="q"><span class="q-num">5.</span> A: Whose phone is this? B: It’s not mine. It ______________.</p></li>
+      <li class="ex"><p class="q"><span class="q-num">6.</span> A: Why doesn’t George answer his phone? B: He ______________.</p></li>
+      <li class="ex"><p class="q"><span class="q-num">7.</span> A: Do you know anyone who has a key to this cupboard? B: Rachel ______________, but I’m not sure.</p></li>
+      <li class="ex"><p class="q"><span class="q-num">8.</span> A: Gary is in a strange mood today. B: Yes, he is. He ______________.</p></li>
+    </ul>
+    <p class="hint">Giáo viên: học sinh làm bài, sau đó chuyển sang slide tiếp theo để kiểm tra đáp án từng câu.</p>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 16</h4>
+    <p><span class="tn-tag">Objective</span> Students apply present possibility structures in context.</p>
+    <p><span class="tn-tag">Script</span> “Work alone or in pairs. You have three minutes. Read the whole dialogue before you choose — the context tells you the answer.”</p>
+    <p><span class="tn-tag">Management</span> Set a timer. Walk around and check. Do not give answers yet.</p>
+    <p><span class="tn-tag">Common mistakes</span> Choosing a grammatically correct phrase that does not fit the meaning (e.g. putting “might be driving” in sentence 1).</p>
+    <p><span class="tn-tag">Transition</span> “Time is up. Let’s check together — one sentence at a time.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 17 ============ -->
+<section class="slide" data-title="Exercise 29.1 – Answers">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part V · Answers</span>
+      <h2>Exercise 29.1 – Answers &amp; explanations</h2>
+      <p class="slide-sub">Đáp án và giải thích</p>
+    </header>
+    <ul class="ex-list">
+      <li class="ex">
+        <p class="q"><span class="q-num">1.</span> A: Do you know where Helen is? B: I’m not sure. She <span class="gap">might be in her room</span>.</p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show explanation</button>
+          <div class="answer">
+            <p class="ans-line">might be in her room</p>
+            <p class="vi">“Có thể cô ấy đang ở trong phòng.” — might + be + cụm chỉ nơi chốn, phỏng đoán vị trí hiện tại.</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">2.</span> A: Is there a bookshop near here? B: I’m not sure, but ask Anna. She <span class="gap">might know</span>.</p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show explanation</button>
+          <div class="answer">
+            <p class="ans-line">might know</p>
+            <p class="vi">“Có thể cô ấy biết.” — might + động từ nguyên mẫu <em>know</em> (không dùng <em>knows</em>, không dùng dạng tiếp diễn).</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">3.</span> A: Where are those people from? B: I don’t know. They <span class="gap">might be Brazilian</span>.</p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show explanation</button>
+          <div class="answer">
+            <p class="ans-line">might be Brazilian</p>
+            <p class="vi">“Có thể họ là người Brazil.” — might + be + tính từ chỉ quốc tịch, dùng để phỏng đoán.</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">4.</span> A: I hope you can help me. B: I’ll try, but it <span class="gap">may not be possible</span>.</p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show explanation</button>
+          <div class="answer">
+            <p class="ans-line">may not be possible</p>
+            <p class="vi">“Có thể điều đó không khả thi.” — may not + be + tính từ, diễn tả khả năng một việc không thể thực hiện được.</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">5.</span> A: Whose phone is this? B: It’s not mine. It <span class="gap">may be Tom’s</span>.</p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show explanation</button>
+          <div class="answer">
+            <p class="ans-line">may be Tom’s</p>
+            <p class="vi">“Có thể nó là của Tom.” — <em>Tom’s</em> là dạng sở hữu, thay cho <em>Tom’s phone</em>.</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">6.</span> A: Why doesn’t George answer his phone? B: He <span class="gap">might be driving</span>.</p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show explanation</button>
+          <div class="answer">
+            <p class="ans-line">might be driving</p>
+            <p class="vi">“Có thể anh ấy đang lái xe.” — might + be + V-ing diễn tả hành động đang diễn ra, giải thích vì sao George không nghe máy.</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">7.</span> A: Do you know anyone who has a key to this cupboard? B: Rachel <span class="gap">might have one</span>, but I’m not sure.</p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show explanation</button>
+          <div class="answer">
+            <p class="ans-line">might have one</p>
+            <p class="vi">“Có thể Rachel có một chiếc.” — <em>one</em> thay cho <em>a key</em>, tránh lặp lại danh từ.</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">8.</span> A: Gary is in a strange mood today. B: Yes, he is. He <span class="gap">may not be feeling well</span>.</p>
+        <div class="reveal-wrap">
+          <button class="reveal-btn" type="button">Show explanation</button>
+          <div class="answer">
+            <p class="ans-line">may not be feeling well</p>
+            <p class="vi">“Có thể anh ấy đang cảm thấy không khỏe.” — may not + be + V-ing, phỏng đoán trạng thái ở hiện tại.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 17</h4>
+    <p><span class="tn-tag">Objective</span> Confirm answers and justify them through context.</p>
+    <p><span class="tn-tag">Script</span> “Number one — who wants to read the full sentence? Good. Why <em>might be in her room</em> and not <em>might know</em>?”</p>
+    <p><span class="tn-tag">Technique</span> Reveal one explanation at a time. Ask “Why?” before revealing. Accept Vietnamese explanations as well as English.</p>
+    <p><span class="tn-tag">Common mistakes</span> Confusing “might be driving” with “might drive”; forgetting that <em>know</em> is not used in the continuous form here.</p>
+    <p><span class="tn-tag">Transition</span> “Now Exercise 29.2 — this time you must choose the verb form yourself.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 18 ============ -->
+<section class="slide" data-title="Exercise 29.2 – Task">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part V · Textbook</span>
+      <h2>Exercise 29.2 – Complete using the verb in brackets</h2>
+      <p class="slide-sub">Chọn đúng dạng động từ theo ngữ cảnh</p>
+    </header>
+    <div class="grid3">
+      <div class="card white"><h4>be + V-ing</h4><p>hành động đang diễn ra<br><span class="vi-inline">might be waiting</span></p></div>
+      <div class="card white"><h4>have + V3</h4><p>sự việc trong quá khứ<br><span class="vi-inline">may have told</span></p></div>
+      <div class="card white"><h4>base verb / have</h4><p>hiện tại, sở hữu<br><span class="vi-inline">may be · may have</span></p></div>
+    </div>
+    <ul class="ex-list cols2">
+      <li class="ex"><p class="q"><span class="q-num">1.</span> A: Where’s Ben? B: I’m not sure. He might ________ lunch. <em>(have)</em></p></li>
+      <li class="ex"><p class="q"><span class="q-num">2.</span> A: Who was the guy we saw with Anna yesterday? B: I’m not sure. It may ________ her brother. <em>(be)</em></p></li>
+      <li class="ex"><p class="q"><span class="q-num">3.</span> A: Is Ellie here? B: I can’t see her. She may not ________ yet. <em>(arrive)</em></p></li>
+      <li class="ex"><p class="q"><span class="q-num">4.</span> A: Gary said he would meet us in the café, but he isn’t here. B: He might ________ outside. I’ll go and look. <em>(wait)</em></p></li>
+      <li class="ex"><p class="q"><span class="q-num">5.</span> A: How did John know that I’d lost my job? B: I don’t know. I suppose Sam may ________ him. <em>(tell)</em></p></li>
+      <li class="ex"><p class="q"><span class="q-num">6.</span> A: Do you know where Jeff is? Is he still in the office? B: He was here earlier, but he might ________ home. <em>(go)</em></p></li>
+      <li class="ex"><p class="q"><span class="q-num">7.</span> A: Where’s Emma? What’s she doing? B: I’m not sure. She might ________ TV. <em>(watch)</em></p></li>
+      <li class="ex"><p class="q"><span class="q-num">8.</span> A: Does Max have any brothers or sisters? B: I’m not sure. I think he may ________ a younger sister. <em>(have)</em></p></li>
+      <li class="ex"><p class="q"><span class="q-num">9.</span> A: I can’t find my umbrella. Have you seen it? B: You may ________ it in the restaurant last night. <em>(leave)</em></p></li>
+      <li class="ex"><p class="q"><span class="q-num">10.</span> A: I rang Dan’s doorbell, but he didn’t answer. I’m sure he was there. B: He might not ________ the doorbell. <em>(hear)</em></p></li>
+      <li class="ex"><p class="q"><span class="q-num">11.</span> A: Hannah is supposed to meet us here, and she’s already 20 minutes late. B: She may ________. She’s always forgetting things. <em>(forget)</em></p></li>
+    </ul>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 18</h4>
+    <p><span class="tn-tag">Objective</span> Students choose the correct verb form from context.</p>
+    <p><span class="tn-tag">Script</span> “Before you write, ask yourself two questions. One: is this about now or about the past? Two: is the action finished, in progress, or a state? Those two questions give you the form.”</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>Which sentences have a past time expression? <em>(2 — yesterday; 9 — last night; 6 — was here earlier)</em></li>
+      <li>Which sentence asks “What’s she doing?” <em>(7 — so we need be + V-ing)</em></li>
+    </ul>
+    <p><span class="tn-tag">Management</span> Give 5 minutes. Students write in their notebooks first, then check in pairs.</p>
+    <p><span class="tn-tag">Transition</span> “Let’s check the answers now.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 19 ============ -->
+<section class="slide" data-title="Exercise 29.2 – Answers">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part V · Answers</span>
+      <h2>Exercise 29.2 – Answers &amp; explanations</h2>
+      <p class="slide-sub">Đáp án và giải thích</p>
+    </header>
+    <ul class="ex-list cols2">
+      <li class="ex">
+        <p class="q"><span class="q-num">1.</span> He might <span class="gap">be having</span> lunch.</p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Explain</button>
+          <div class="answer"><p class="ans-line">be having</p><p class="vi">Might + be + V-ing: hành động đang diễn ra ở hiện tại.</p></div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">2.</span> It may <span class="gap">be</span> her brother.</p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Explain</button>
+          <div class="answer"><p class="ans-line">be</p><p class="vi">Sau <em>may</em> dùng động từ nguyên mẫu <em>be</em>.</p></div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">3.</span> She may not <span class="gap">have arrived</span> yet.</p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Explain</button>
+          <div class="answer"><p class="ans-line">have arrived</p><p class="vi">May not + have + V3: khả năng một việc chưa xảy ra tính đến hiện tại. V3 của <em>arrive</em> là <em>arrived</em>.</p></div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">4.</span> He might <span class="gap">be waiting</span> outside.</p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Explain</button>
+          <div class="answer"><p class="ans-line">be waiting</p><p class="vi">Phỏng đoán hành động đang diễn ra ở hiện tại → might be + V-ing.</p></div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">5.</span> Sam may <span class="gap">have told</span> him.</p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Explain</button>
+          <div class="answer"><p class="ans-line">have told</p><p class="vi">Sự việc đã xảy ra trước thời điểm John biết → may have + V3. tell – told – told.</p></div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">6.</span> He might <span class="gap">have gone</span> home.</p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Explain</button>
+          <div class="answer"><p class="ans-line">have gone</p><p class="vi">Phỏng đoán về hành động đã xảy ra. V3 của <em>go</em> là <em>gone</em>.</p></div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">7.</span> She might <span class="gap">be watching</span> TV.</p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Explain</button>
+          <div class="answer"><p class="ans-line">be watching</p><p class="vi">Câu hỏi “What’s she doing?” hỏi về hành động hiện tại → might be + V-ing.</p></div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">8.</span> He may <span class="gap">have</span> a younger sister.</p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Explain</button>
+          <div class="answer"><p class="ans-line">have</p><p class="vi">Diễn tả sự sở hữu ở hiện tại → may + have (nguyên mẫu). Không dùng <em>have had</em>.</p></div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">9.</span> You may <span class="gap">have left</span> it in the restaurant last night.</p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Explain</button>
+          <div class="answer"><p class="ans-line">have left</p><p class="vi">“Last night” chỉ thời gian quá khứ → may have + V3. leave – left – left.</p></div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">10.</span> He might not <span class="gap">have heard</span> the doorbell.</p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Explain</button>
+          <div class="answer"><p class="ans-line">have heard</p><p class="vi">Phỏng đoán lý do trong quá khứ → might not have + V3. hear – heard – heard.</p></div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">11.</span> She may <span class="gap">have forgotten</span>.</p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Explain</button>
+          <div class="answer"><p class="ans-line">have forgotten</p><p class="vi">Việc quên có thể đã xảy ra trước thời điểm nói → may have + V3. forget – forgot – forgotten.</p></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 19</h4>
+    <p><span class="tn-tag">Objective</span> Confirm answers and reinforce the time / structure link.</p>
+    <p><span class="tn-tag">Script</span> “Look at number 8 — why not ‘may have had’? Because Max has a sister <em>now</em>. It is not about the past.”</p>
+    <p><span class="tn-tag">Focus points</span></p>
+    <ul>
+      <li>3: <em>yet</em> is a clue for <em>have arrived</em>.</li>
+      <li>8: <em>have</em> = possession, present.</li>
+      <li>9: <em>last night</em> is a past time marker.</li>
+      <li>10: <em>might not have heard</em> — an uncertain negative, not a certainty.</li>
+    </ul>
+    <p><span class="tn-tag">Transition</span> “Now Exercise 29.3. This one is about choosing the right <em>negative</em>.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 20 ============ -->
+<section class="slide" data-title="Exercise 29.3 – Task">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part V · Textbook</span>
+      <h2>Exercise 29.3 – might not have … or couldn’t have …</h2>
+      <p class="slide-sub">Chọn dạng phủ định đúng</p>
+    </header>
+    <div class="compare">
+      <div class="col left">
+        <h4>might not have + V3</h4>
+        <p>The speaker is <strong>not sure</strong>.</p>
+        <p class="vi">Người nói chưa chắc chắn — chỉ là một khả năng.</p>
+      </div>
+      <div class="col right">
+        <h4>couldn’t have + V3</h4>
+        <p>The speaker is <strong>sure it is impossible</strong>.</p>
+        <p class="vi">Người nói cho rằng điều đó không thể xảy ra.</p>
+      </div>
+    </div>
+    <ul class="ex-list">
+      <li class="ex">
+        <p class="q"><span class="q-num">1.</span> A: I was surprised Amy wasn’t at the meeting. Perhaps she didn’t know about it. B: Maybe. She ________ about it.</p>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">2.</span> A: I wonder why Tom didn’t come to the party. Perhaps he didn’t want to come. B: It’s possible. He ________ to come.</p>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">3.</span> A: I wonder how the fire started. Was it an accident? B: No, the police say it ________ an accident. It was deliberate.</p>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">4.</span> A: Mike says he needs to see you. He tried to find you yesterday. B: Well, he ________ very hard. I was in my office all day.</p>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">5.</span> A: The man you spoke to – are you sure he was American? B: No, I’m not sure. He ________ American.</p>
+      </li>
+    </ul>
+    <p class="hint">Giáo viên: hỏi học sinh “Người nói chắc chắn hay không chắc chắn?” trước khi các em chọn.</p>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 20</h4>
+    <p><span class="tn-tag">Objective</span> Students choose between an uncertain negative and an impossible negative.</p>
+    <p><span class="tn-tag">Script</span> “For each sentence, ask yourself one question: is the speaker <em>guessing</em> or is the speaker <em>sure</em>? If they are guessing, use <em>might not have</em>. If they have evidence and are sure it is impossible, use <em>couldn’t have</em>.”</p>
+    <p><span class="tn-tag">Clues</span></p>
+    <ul>
+      <li>Words like <em>perhaps</em>, <em>maybe</em>, <em>it’s possible</em>, <em>I’m not sure</em> → <strong>might not have</strong>.</li>
+      <li>Words like <em>the police say</em>, a reason or logical conclusion → <strong>couldn’t have</strong>.</li>
+    </ul>
+    <p><span class="tn-tag">Transition</span> “Let’s check.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 21 ============ -->
+<section class="slide" data-title="Exercise 29.3 – Answers">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part V · Answers</span>
+      <h2>Exercise 29.3 – Answers &amp; explanations</h2>
+      <p class="slide-sub">Đáp án và giải thích</p>
+    </header>
+    <ul class="ex-list">
+      <li class="ex">
+        <p class="q"><span class="q-num">1.</span> She <span class="gap">might not have known</span> about it.</p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Explain</button>
+          <div class="answer">
+            <p class="ans-line">might not have known</p>
+            <p class="vi">Người nói chỉ đưa ra phỏng đoán (“Perhaps she didn’t know”), không khẳng định chắc chắn → <strong>might not have + V3</strong>.</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">2.</span> He <span class="gap">might not have wanted</span> to come.</p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Explain</button>
+          <div class="answer">
+            <p class="ans-line">might not have wanted</p>
+            <p class="vi">Đây là một khả năng về mong muốn trong quá khứ → <strong>might not have + V3</strong> (want – wanted – wanted).</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">3.</span> The police say it <span class="gap">couldn’t have been</span> an accident. It was deliberate.</p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Explain</button>
+          <div class="answer">
+            <p class="ans-line">couldn’t have been</p>
+            <p class="vi"><strong>Couldn’t have been</strong> thể hiện sự phủ định mạnh: theo thông tin cảnh sát đưa ra, vụ cháy <em>không thể nào</em> là tai nạn.</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">4.</span> Well, he <span class="gap">couldn’t have tried</span> very hard. I was in my office all day.</p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Explain</button>
+          <div class="answer">
+            <p class="ans-line">couldn’t have tried</p>
+            <p class="vi">Người nói suy luận: nếu Mike thực sự cố gắng thì anh ấy đã tìm thấy mình → “không thể nào đã cố gắng nhiều”.</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">5.</span> No, I’m not sure. He <span class="gap">might not have been</span> American.</p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Explain</button>
+          <div class="answer">
+            <p class="ans-line">might not have been American</p>
+            <p class="vi">Người nói <em>không chắc</em> về quốc tịch của người đàn ông → dùng <strong>might not have been</strong>. Không dùng <em>couldn’t have been</em> vì chưa có cơ sở để kết luận điều đó là không thể.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="note-box">
+      <p><strong>Remember the difference:</strong> <em>might not have</em> = có thể đã không (chưa chắc) · <em>couldn’t have</em> = không thể nào đã (kết luận chắc chắn).</p>
+    </div>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 21</h4>
+    <p><span class="tn-tag">Objective</span> Consolidate the most difficult contrast of the unit.</p>
+    <p><span class="tn-tag">Script</span> “Number 5 is the trap. The speaker says ‘I’m not sure’. So we cannot use <em>couldn’t have</em> — that would mean ‘it is impossible’. We use <em>might not have been</em>.”</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>In number 3, which words tell you the speaker is certain? <em>(“the police say”, “It was deliberate”)</em></li>
+      <li>Can you make a sentence with <em>couldn’t have</em> about our classroom? <em>(e.g. “The door couldn’t have been open — I locked it.”)</em></li>
+    </ul>
+    <p><span class="tn-tag">Transition</span> “Now let’s use all of this in real conversation. Pair work!”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 22 ============ -->
+<section class="slide" data-title="Pair work: Make a guess">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part VI · Speaking</span>
+      <h2>Pair work – Make a guess</h2>
+      <p class="slide-sub">Luyện nói theo cặp</p>
+    </header>
+    <p>Work in pairs. Look at each situation and make <strong>two guesses</strong> using the target grammar.</p>
+    <p class="vi">Làm việc theo cặp. Với mỗi tình huống, đưa ra hai phỏng đoán bằng cấu trúc đã học.</p>
+    <div class="grid2">
+      <div class="card white"><h4>1.</h4><p>Your friend didn’t answer your call.</p></div>
+      <div class="card white"><h4>2.</h4><p>Your classmate is absent today.</p></div>
+      <div class="card white"><h4>3.</h4><p>Someone left a bag in the classroom.</p></div>
+      <div class="card white"><h4>4.</h4><p>Your friend looks tired.</p></div>
+      <div class="card white"><h4>5.</h4><p>A student didn’t finish their homework.</p></div>
+      <div class="card white"><h4>6.</h4><p>Your own situation — your choice!</p></div>
+    </div>
+    <div class="speak-box">
+      <p><strong>Sentence starters / Gợi ý bắt đầu câu:</strong></p>
+      <span class="starter">She might be …</span>
+      <span class="starter">He may have …</span>
+      <span class="starter">They might not have …</span>
+      <span class="starter">It couldn’t have …</span>
+      <span class="starter">Maybe …</span>
+    </div>
+    <div class="note-box">
+      <p><strong>Example:</strong></p>
+      <p><span class="en">A: My friend didn’t answer my call.</span></p>
+      <p><span class="en">B: She might be sleeping. / She may have left her phone somewhere.</span></p>
+    </div>
+    <p class="hint">Giáo viên: sau 3–4 phút, gọi 2–3 cặp trình bày trước lớp. Khuyến khích học sinh tự đặt câu, không chỉ đọc câu mẫu.</p>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 22</h4>
+    <p><span class="tn-tag">Objective</span> Free, personalised production of the target structures.</p>
+    <p><span class="tn-tag">Script</span> “Work with your partner. Student A reads the situation, Student B makes a guess. Then change roles. Try to use a different structure each time.”</p>
+    <p><span class="tn-tag">Monitoring</span> Walk around and listen. Note down two or three errors to correct later — but do not interrupt the flow.</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>Can you make one guess with <em>might have</em>? One with <em>be + V-ing</em>?</li>
+      <li>Can you use <em>couldn’t have</em> about the missing bag? <em>(“It couldn’t have walked away by itself!”)</em></li>
+    </ul>
+    <p><span class="tn-tag">Transition</span> “Good work. Now let’s look at some common mistakes and fix them together.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 23 ============ -->
+<section class="slide" data-title="Error correction">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part VI · Accuracy</span>
+      <h2>Error correction</h2>
+      <p class="slide-sub">Sửa lỗi và giải thích quy tắc</p>
+    </header>
+    <p>Each sentence has a mistake. Correct it and explain the rule.</p>
+    <p class="vi">Mỗi câu có một lỗi. Hãy sửa và giải thích quy tắc.</p>
+    <ul class="ex-list">
+      <li class="ex">
+        <p class="q"><span class="q-num">1.</span> <span class="bad-mark">She might goes home early.</span></p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Show correction</button>
+          <div class="answer">
+            <p class="ans-line">She might go home early.</p>
+            <p class="vi">Sau <em>might</em>, động từ ở dạng nguyên mẫu — không thêm <em>-s</em>.</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">2.</span> <span class="bad-mark">He may to be tired.</span></p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Show correction</button>
+          <div class="answer">
+            <p class="ans-line">He may be tired.</p>
+            <p class="vi">Sau <em>may</em> không dùng <em>to</em> + động từ. Dùng động từ nguyên mẫu không “to”.</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">3.</span> <span class="bad-mark">They might have went home.</span></p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Show correction</button>
+          <div class="answer">
+            <p class="ans-line">They might have gone home.</p>
+            <p class="vi">Sau <em>have</em> phải dùng V3 (quá khứ phân từ). <em>go – went – gone</em>.</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">4.</span> <span class="bad-mark">She couldn’t have received it, but perhaps she did.</span></p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Show correction</button>
+          <div class="answer">
+            <p class="ans-line">She might not have received it, but perhaps she did.</p>
+            <p class="vi">Câu này <em>tự mâu thuẫn</em>: <strong>couldn’t have</strong> nghĩa là “không thể nào đã xảy ra”, nên không thể nói tiếp “but perhaps she did”. Nếu muốn diễn tả khả năng, phải dùng <strong>might not have</strong>.</p>
+          </div>
+        </div>
+      </li>
+      <li class="ex">
+        <p class="q"><span class="q-num">5.</span> <span class="bad-mark">Maybe be he is busy.</span></p>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Show correction</button>
+          <div class="answer">
+            <p class="ans-line">Maybe he is busy. / He may be busy.</p>
+            <p class="vi">Không dùng <em>maybe</em> và <em>be</em> cùng lúc theo cách này. Hoặc dùng trạng từ <em>maybe</em> + câu đầy đủ, hoặc dùng <em>may be</em> + tính từ.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 23</h4>
+    <p><span class="tn-tag">Objective</span> Eliminate the most frequent learner errors.</p>
+    <p><span class="tn-tag">Script</span> “Read sentence one. What is wrong? Say the correct sentence. Now tell me the rule.”</p>
+    <p><span class="tn-tag">Key point – number 4</span> This is a logical error, not only a grammar error. <em>Couldn’t have</em> = “it is impossible”. You cannot then say “but perhaps it happened”. Use <em>might not have</em> when you are unsure.</p>
+    <p><span class="tn-tag">Questions</span></p>
+    <ul>
+      <li>Why is “might have went” wrong? <em>(Wrong V3 form.)</em></li>
+      <li>Which two-word / one-word pair did we study? <em>(may be / maybe)</em></li>
+    </ul>
+    <p><span class="tn-tag">Transition</span> “Let’s finish with a short assessment. Get ready to answer.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 24 ============ -->
+<section class="slide" data-title="Final assessment">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part VI · Assessment</span>
+      <h2>Final assessment</h2>
+      <p class="slide-sub">Kiểm tra cuối bài – 10 câu</p>
+    </header>
+    <div class="stepper" data-stepper>
+      <div class="step active">
+        <div class="card white">
+          <p class="q"><strong>Question 1</strong> — Present possibility</p>
+          <p>“Where’s Lucy?” “I’m not sure. She ______ in the garden.”</p>
+          <p>A. may be &nbsp;&nbsp; B. may is &nbsp;&nbsp; C. maybe</p>
+        </div>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer"><p class="ans-line">A. may be</p><p class="vi">may + be + cụm chỉ nơi chốn. <em>Maybe</em> là trạng từ, không đứng sau chủ ngữ ở đây.</p></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="card white">
+          <p class="q"><strong>Question 2</strong> — Present continuous possibility</p>
+          <p>“Why is the light on?” “Tom ______.”</p>
+          <p>A. may working &nbsp;&nbsp; B. might be working &nbsp;&nbsp; C. might to work</p>
+        </div>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer"><p class="ans-line">B. might be working</p><p class="vi">might + be + V-ing diễn tả hành động đang diễn ra ở hiện tại.</p></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="card white">
+          <p class="q"><strong>Question 3</strong> — Past possibility</p>
+          <p>“Anna didn’t come to class.” “She ______ ill.”</p>
+          <p>A. may have been &nbsp;&nbsp; B. may has been &nbsp;&nbsp; C. might be been</p>
+        </div>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer"><p class="ans-line">A. may have been</p><p class="vi">Phỏng đoán về quá khứ → may + have + V3 (<em>been</em>). <em>have</em> không đổi thành <em>has</em>.</p></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="card white">
+          <p class="q"><strong>Question 4</strong> — Negative present possibility</p>
+          <p>“Is that story true?” “It ______ true.”</p>
+          <p>A. may not be &nbsp;&nbsp; B. may not to be &nbsp;&nbsp; C. maybe not</p>
+        </div>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer"><p class="ans-line">A. may not be</p><p class="vi">may + not + động từ nguyên mẫu. Không dùng <em>to</em> sau <em>may not</em>.</p></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="card white">
+          <p class="q"><strong>Question 5</strong> — <em>may be</em> or <em>maybe</em></p>
+          <p>______ he is busy.</p>
+          <p>A. May be &nbsp;&nbsp; B. Maybe</p>
+        </div>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer"><p class="ans-line">B. Maybe</p><p class="vi">Đứng đầu câu và có nghĩa “có lẽ” → trạng từ một từ <em>Maybe</em>.</p></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="card white">
+          <p class="q"><strong>Question 6</strong> — Past possibility</p>
+          <p>“I can’t find my keys.” “You ______ them at the office.”</p>
+          <p>A. may have left &nbsp;&nbsp; B. may have leave &nbsp;&nbsp; C. might left</p>
+        </div>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer"><p class="ans-line">A. may have left</p><p class="vi">may + have + V3. V3 của <em>leave</em> là <em>left</em>.</p></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="card white">
+          <p class="q"><strong>Question 7</strong> — <em>couldn’t have</em></p>
+          <p>“The police say the fire was deliberate. It ______ an accident.”</p>
+          <p>A. might not have been &nbsp;&nbsp; B. couldn’t have been</p>
+        </div>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer"><p class="ans-line">B. couldn’t have been</p><p class="vi">Cảnh sát kết luận chắc chắn → “không thể nào là tai nạn”.</p></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="card white">
+          <p class="q"><strong>Question 8</strong> — Error correction</p>
+          <p><span class="bad-mark">She might goes home early.</span></p>
+        </div>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer"><p class="ans-line">She might go home early.</p><p class="vi">Sau <em>might</em>, động từ không chia, không thêm <em>-s</em>.</p></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="card white">
+          <p class="q"><strong>Question 9</strong> — Error correction</p>
+          <p><span class="bad-mark">They might have went home.</span></p>
+        </div>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer"><p class="ans-line">They might have gone home.</p><p class="vi">Sau <em>have</em> phải dùng V3: <em>go – went – gone</em>.</p></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="card white">
+          <p class="q"><strong>Question 10</strong> — <em>might not have</em> vs. <em>couldn’t have</em></p>
+          <p>“Why hasn’t Sarah replied? I suppose she ______ my message.”</p>
+          <p>A. might not have received &nbsp;&nbsp; B. couldn’t have received</p>
+        </div>
+        <div class="reveal-wrap"><button class="reveal-btn" type="button">Show answer</button>
+          <div class="answer"><p class="ans-line">A. might not have received</p><p class="vi">“I suppose” cho thấy người nói chỉ <em>phỏng đoán</em> → dùng <em>might not have</em>, không dùng <em>couldn’t have</em>.</p></div>
+        </div>
+      </div>
+      <div class="step-controls">
+        <button class="step-prev" type="button">‹ Câu trước</button>
+        <span class="step-counter">1 / 10</span>
+        <button class="step-next" type="button">Câu tiếp ›</button>
+      </div>
+    </div>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 24</h4>
+    <p><span class="tn-tag">Objective</span> Quick formative assessment of all lesson points.</p>
+    <p><span class="tn-tag">Script</span> “I will show one question at a time. Do not shout the answer — think first. Then I will ask one student to explain.”</p>
+    <p><span class="tn-tag">Management</span> Use the “Câu tiếp ›” button to move one question at a time. Ask the whole class, then nominate a student. Reveal the answer after at least two responses.</p>
+    <p><span class="tn-tag">Expected answers</span> 1 A · 2 B · 3 A · 4 A · 5 B · 6 A · 7 B · 8 might go · 9 might have gone · 10 A</p>
+    <p><span class="tn-tag">Common mistakes</span> Question 5 (<em>maybe</em>) and question 10 (<em>might not have</em>) are the ones students usually miss.</p>
+    <p><span class="tn-tag">Transition</span> “Let’s summarise everything on one slide, then I will give you the exit ticket.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 25 ============ -->
+<section class="slide" data-title="Summary &amp; exit ticket">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part VI · Wrap-up</span>
+      <h2>Summary &amp; exit ticket</h2>
+      <p class="slide-sub">Tổng kết và phiếu ra về</p>
+    </header>
+    <h3>Summary – Ghi nhớ trong bài học</h3>
+    <table>
+      <thead><tr><th style="width:45%">Structure</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><strong>may / might + V</strong></td><td>Có thể xảy ra ở hiện tại hoặc tương lai.</td></tr>
+        <tr><td><strong>may / might + be + V-ing</strong></td><td>Có thể đang diễn ra.</td></tr>
+        <tr><td><strong>may / might + have + V3</strong></td><td>Có thể đã xảy ra trong quá khứ.</td></tr>
+        <tr><td><strong>may / might not have + V3</strong></td><td>Có thể đã không xảy ra <em>(chưa chắc chắn)</em>.</td></tr>
+        <tr><td><strong>couldn’t have + V3</strong></td><td>Không thể nào đã xảy ra <em>(kết luận chắc chắn)</em>.</td></tr>
+      </tbody>
+    </table>
+    <div class="note-box">
+      <p><strong>Key message:</strong> Chọn đúng cấu trúc theo <em>thời gian</em> của sự việc và <em>mức độ chắc chắn</em> của người nói.</p>
+    </div>
+    <h3>Exit ticket – Phiếu ra về</h3>
+    <ol>
+      <li>Write one sentence about something that <strong>might happen tomorrow</strong>.</li>
+      <li>Write one sentence about something that <strong>may have happened yesterday</strong>.</li>
+      <li>Explain the difference between <strong>might not have</strong> and <strong>couldn’t have</strong>.</li>
+    </ol>
+    <p class="vi">Học sinh viết câu trả lời ra giấy trong 3 phút và nộp lại trước khi ra về.</p>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 25</h4>
+    <p><span class="tn-tag">Objective</span> Summarise and get quick evidence of individual understanding.</p>
+    <p><span class="tn-tag">Script</span> “Here are the five structures of today’s lesson. Read them with me. Now, take a small piece of paper. Three short tasks — three minutes.”</p>
+    <p><span class="tn-tag">Sample exit-ticket answers</span></p>
+    <ul>
+      <li>“It might rain tomorrow.” / “We may have a test next week.”</li>
+      <li>“She may have forgotten her keys.” / “They might have gone home early.”</li>
+      <li>“<em>Might not have</em> = I’m not sure, it’s only a possibility. <em>Couldn’t have</em> = I’m sure it was impossible.”</li>
+    </ul>
+    <p><span class="tn-tag">Assessment</span> Collect the tickets. Students who confuse <em>might not have</em> and <em>couldn’t have</em> need extra practice next lesson.</p>
+    <p><span class="tn-tag">Transition</span> “One last slide — your homework.”</p>
+  </aside>
+</section>
+
+<!-- ============ SLIDE 26 ============ -->
+<section class="slide" data-title="Homework">
+  <div class="slide-inner">
+    <header class="slide-head">
+      <span class="badge">Part VI · Homework</span>
+      <h2>Homework</h2>
+      <p class="slide-sub">Bài tập về nhà</p>
+    </header>
+    <div class="grid3">
+      <div class="card white">
+        <h4>Task 1 – 5 sentences</h4>
+        <p>Write <strong>five sentences</strong> about possibilities in your daily life.</p>
+        <p class="vi">Viết 5 câu về những khả năng trong cuộc sống hằng ngày.</p>
+        <p class="vi-inline">Example: <em>My brother may visit us this weekend.</em></p>
+      </div>
+      <div class="card white">
+        <h4>Task 2 – 3 sentences</h4>
+        <p>Write <strong>three sentences</strong> guessing what happened yesterday.</p>
+        <p class="vi">Viết 3 câu phỏng đoán điều gì đã xảy ra hôm qua.</p>
+        <p class="vi-inline">Example: <em>She might have missed the bus.</em></p>
+      </div>
+      <div class="card white">
+        <h4>Task 3 – 2 examples</h4>
+        <p>Create <strong>two examples</strong> contrasting <em>might not have</em> and <em>couldn’t have</em>.</p>
+        <p class="vi">Viết 2 ví dụ phân biệt <em>might not have</em> và <em>couldn’t have</em>.</p>
+      </div>
+    </div>
+    <div class="note-box">
+      <p><strong>Don’t forget / Đừng quên:</strong> after <em>may / might</em> → base verb · after <em>have</em> → V3.</p>
+      <p class="vi">Sau may/might dùng động từ nguyên mẫu; sau have dùng V3 (quá khứ phân tử).</p>
+    </div>
+    <p class="hint">Thank you for your work today! — Cảm ơn các em đã học tập tích cực!</p>
+  </div>
+  <aside class="tn">
+    <h4>Teacher notes – Slide 26</h4>
+    <p><span class="tn-tag">Objective</span> Give clear, checkable homework.</p>
+    <p><span class="tn-tag">Script</span> “For homework: five sentences about your daily life, three guesses about yesterday, and two contrasting examples. Write them in your notebook. I will check them next lesson.”</p>
+    <p><span class="tn-tag">Answer guide (teacher only)</span></p>
+    <ul>
+      <li>Task 1 – accept any correct present/future possibility: <em>He may be at work. She might not come to the party. It may rain later.</em></li>
+      <li>Task 2 – accept any correct past possibility: <em>He may have forgotten. They might have gone out. She may not have seen my message.</em></li>
+      <li>Task 3 – the contrast must show uncertainty vs. impossibility, e.g. <em>“She might not have received the email.” (I’m not sure) / “She couldn’t have received the email — her phone was off all day.” (It’s impossible)</em></li>
+    </ul>
+    <p><span class="tn-tag">Follow-up questions</span> “Which sentence was the hardest to write? Why?” / “Can you read one sentence to the class?”</p>
+    <p><span class="tn-tag">Next lesson</span> Unit 30 – May and might 2 (may/might for permission and requests).</p>
+  </aside>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <button id="btnPrev" type="button" aria-label="Previous slide">‹ Previous</button>
+  <div class="counter"><span id="cur">1</span> / <span id="tot">26</span></div>
+  <button id="btnNext" type="button" aria-label="Next slide">Next ›</button>
+</footer>
+
+<!-- ================= TOC ================= -->
+<div class="toc-overlay" id="toc" role="dialog" aria-modal="true" aria-label="Slide overview">
+  <div class="toc-panel">
+    <div class="toc-head">
+      <h3>Contents · Mục lục bài giảng</h3>
+      <button class="toc-close" id="tocClose" type="button">✕ Close</button>
+    </div>
+    <ul id="tocList"></ul>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- Slide list ---------- */
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var total = slides.length;
+  var current = 0;
+
+  var stage = document.getElementById('stage');
+  var bar = document.getElementById('bar');
+  var curLabel = document.getElementById('cur');
+  var totLabel = document.getElementById('tot');
+  var btnPrev = document.getElementById('btnPrev');
+  var btnNext = document.getElementById('btnNext');
+  var btnToc = document.getElementById('btnToc');
+  var btnNotes = document.getElementById('btnNotes');
+  var btnReveal = document.getElementById('btnReveal');
+  var btnFull = document.getElementById('btnFull');
+  var btnReset = document.getElementById('btnReset');
+  var toc = document.getElementById('toc');
+  var tocList = document.getElementById('tocList');
+  var tocClose = document.getElementById('tocClose');
+
+  totLabel.textContent = total;
+
+  /* ---------- Steppers registry (for reset) ---------- */
+  var steppers = [];
+
+  /* ---------- Build table of contents ---------- */
+  slides.forEach(function (slide, i) {
+    var li = document.createElement('li');
+    var b = document.createElement('button');
+    b.type = 'button';
+
+    var num = document.createElement('span');
+    num.className = 'toc-num';
+    num.textContent = String(i + 1);
+
+    var title = document.createElement('span');
+    title.className = 'toc-title';
+    title.textContent = slide.getAttribute('data-title') || ('Slide ' + (i + 1));
+
+    b.appendChild(num);
+    b.appendChild(title);
+    b.addEventListener('click', function () {
+      goTo(i);
+      closeToc();
+    });
+    li.appendChild(b);
+    tocList.appendChild(li);
+  });
+  var tocButtons = Array.prototype.slice.call(tocList.querySelectorAll('button'));
+
+  /* ---------- Navigation ---------- */
+  function goTo(index) {
+    if (index < 0) { index = 0; }
+    if (index > total - 1) { index = total - 1; }
+    slides[current].classList.remove('active');
+    current = index;
+    slides[current].classList.add('active');
+
+    curLabel.textContent = String(current + 1);
+    bar.style.width = ((current + 1) / total * 100) + '%';
+
+    btnPrev.disabled = (current === 0);
+    btnNext.disabled = (current === total - 1);
+
+    tocButtons.forEach(function (b, i) {
+      b.classList.toggle('current', i === current);
+    });
+
+    stage.scrollTop = 0;
+    updateRevealButtonState();
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  btnNext.addEventListener('click', next);
+  btnPrev.addEventListener('click', prev);
+
+  /* ---------- Keyboard navigation ---------- */
+  document.addEventListener('keydown', function (e) {
+    var tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : '';
+    if (tag === 'input' || tag === 'textarea' || tag === 'select') { return; }
+
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+      e.preventDefault();
+      next();
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      e.preventDefault();
+      prev();
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      goTo(0);
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      goTo(total - 1);
+    } else if (e.key === 'Escape') {
+      closeToc();
+    }
+  });
+
+  /* ---------- Answer reveals ---------- */
+  function labelOf(btn) {
+    if (!btn.dataset.defaultLabel) {
+      btn.dataset.defaultLabel = btn.textContent;
+    }
+    return btn.dataset.defaultLabel;
+  }
+
+  function refreshWrap(wrap) {
+    var btn = wrap.querySelector('.reveal-btn');
+    if (!btn) { return; }
+    var def = labelOf(btn);
+    if (wrap.classList.contains('open')) {
+      btn.textContent = 'Hide';
+    } else {
+      btn.textContent = def;
+    }
+  }
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.reveal-btn') : null;
+    if (!btn) { return; }
+    var wrap = btn.closest('.reveal-wrap');
+    if (!wrap) { return; }
+    wrap.classList.toggle('open');
+    refreshWrap(wrap);
+    updateRevealButtonState();
+  });
+
+  function updateRevealButtonState() {
+    var wraps = slides[current].querySelectorAll('.reveal-wrap');
+    if (!wraps.length) {
+      btnReveal.disabled = true;
+      btnReveal.classList.remove('on');
+      return;
+    }
+    btnReveal.disabled = false;
+    var anyClosed = false;
+    for (var i = 0; i < wraps.length; i++) {
+      if (!wraps[i].classList.contains('open')) { anyClosed = true; break; }
+    }
+    btnReveal.classList.toggle('on', !anyClosed);
+  }
+
+  btnReveal.addEventListener('click', function () {
+    var wraps = slides[current].querySelectorAll('.reveal-wrap');
+    if (!wraps.length) { return; }
+    var anyClosed = false;
+    for (var i = 0; i < wraps.length; i++) {
+      if (!wraps[i].classList.contains('open')) { anyClosed = true; break; }
+    }
+    Array.prototype.forEach.call(wraps, function (w) {
+      w.classList.toggle('open', anyClosed);
+      refreshWrap(w);
+    });
+    updateRevealButtonState();
+  });
+
+  /* ---------- Teacher notes ---------- */
+  btnNotes.addEventListener('click', function () {
+    var on = document.body.classList.toggle('notes');
+    btnNotes.textContent = on ? '👩‍🏫 Notes: on' : '👩‍🏫 Notes: off';
+    btnNotes.classList.toggle('on', on);
+  });
+
+  /* ---------- Full screen ---------- */
+  btnFull.addEventListener('click', function () {
+    var doc = document;
+    var el = doc.documentElement;
+    if (!doc.fullscreenElement) {
+      if (el.requestFullscreen) { el.requestFullscreen(); }
+      else if (el.webkitRequestFullscreen) { el.webkitRequestFullscreen(); }
+    } else {
+      if (doc.exitFullscreen) { doc.exitFullscreen(); }
+      else if (doc.webkitExitFullscreen) { doc.webkitExitFullscreen(); }
+    }
+  });
+
+  /* ---------- Reset ---------- */
+  btnReset.addEventListener('click', function () {
+    var ok = window.confirm('Reset the presentation?\n\nĐặt lại bài giảng về slide đầu tiên và ẩn tất cả đáp án?');
+    if (!ok) { return; }
+    Array.prototype.forEach.call(document.querySelectorAll('.reveal-wrap.open'), function (w) {
+      w.classList.remove('open');
+      refreshWrap(w);
+    });
+    document.body.classList.remove('notes');
+    btnNotes.textContent = '👩‍🏫 Notes: off';
+    btnNotes.classList.remove('on');
+    // Reset all steppers about to slide 1
+    steppers.forEach(function (s) { if (typeof s.reset === 'function') { s.reset(); } });
+    goTo(0);
+  });
+
+  /* ---------- TOC overlay ---------- */
+  function openToc() { toc.classList.add('open'); }
+  function closeToc() { toc.classList.remove('open'); }
+
+  btnToc.addEventListener('click', openToc);
+  tocClose.addEventListener('click', closeToc);
+  toc.addEventListener('click', function (e) {
+    if (e.target === toc) { closeToc(); }
+  });
+
+  /* ---------- Steppers ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-stepper]'), function (stepper) {
+    var steps = Array.prototype.slice.call(stepper.querySelectorAll('.step'));
+    if (!steps.length) { return; }
+    var idx = 0;
+    var counter = stepper.querySelector('.step-counter');
+    var prevBtn = stepper.querySelector('.step-prev');
+    var nextBtn = stepper.querySelector('.step-next');
+
+    function render() {
+      steps.forEach(function (s, i) {
+        s.classList.toggle('active', i === idx);
+      });
+      if (counter) { counter.textContent = (idx + 1) + ' / ' + steps.length; }
+      if (prevBtn) { prevBtn.disabled = (idx === 0); }
+      if (nextBtn) { nextBtn.disabled = (idx === steps.length - 1); }
+    }
+
+    function reset() {
+      idx = 0;
+      render();
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        if (idx > 0) { idx -= 1; render(); }
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        if (idx < steps.length - 1) { idx += 1; render(); }
+      });
+    }
+    render();
+
+    steppers.push({ el: stepper, reset: reset });
+  });
+
+  /* ---------- Init ---------- */
+  goTo(0);
+})();
+</script>
+</body>
+</html>
